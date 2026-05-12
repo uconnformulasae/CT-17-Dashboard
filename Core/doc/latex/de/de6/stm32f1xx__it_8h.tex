@@ -1,0 +1,181 @@
+\doxysection{Inc/\+stm32f1xx\+\_\+it.h File Reference}
+\hypertarget{stm32f1xx__it_8h}{}\label{stm32f1xx__it_8h}\index{Inc/stm32f1xx\_it.h@{Inc/stm32f1xx\_it.h}}
+
+
+This file contains the headers of the interrupt handlers.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a6ad7a5e3ee69cb6db6a6b9111ba898bc_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{NMI\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Non maskable interrupt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a2bffc10d5bd4106753b7c30e86903bea_a2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Hard fault interrupt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a3150f74512510287a942624aa9b44cc5_a3150f74512510287a942624aa9b44cc5}{Mem\+Manage\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Memory management fault. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a850cefb17a977292ae5eb4cafa9976c3_a850cefb17a977292ae5eb4cafa9976c3}{Bus\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Prefetch fault, memory access fault. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a1d98923de2ed6b7309b66f9ba2971647_a1d98923de2ed6b7309b66f9ba2971647}{Usage\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Undefined instruction or illegal state. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a3e5ddb3df0d62f2dc357e64a3f04a6ce_a3e5ddb3df0d62f2dc357e64a3f04a6ce}{SVC\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles System service call via SWI instruction. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_adbdfb05858cc36fc520974df37ec3cb0_adbdfb05858cc36fc520974df37ec3cb0}{Debug\+Mon\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Debug monitor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a6303e1f258cbdc1f970ce579cc015623_a6303e1f258cbdc1f970ce579cc015623}{Pend\+SV\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Pendable request for system service. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_ab5e09814056d617c521549e542639b7e_ab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles System tick timer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_ab5a1d9e9c8ef50e0cb9ddb5745a20a14_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}{EXTI2\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles EXTI line2 interrupt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_a30c045de96d18ec9c67a7b9e4350920f_a30c045de96d18ec9c67a7b9e4350920f}{EXTI3\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles EXTI line3 interrupt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_af57bde854fa2b396f29664995a502b19_af57bde854fa2b396f29664995a502b19}{USB\+\_\+\+LP\+\_\+\+CAN1\+\_\+\+RX0\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles USB low priority or CAN RX0 interrupts. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stm32f1xx__it_8h_ac8e51d2183b5230cbd5481f8867adce9_ac8e51d2183b5230cbd5481f8867adce9}{TIM3\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles TIM3 global interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the headers of the interrupt handlers. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2026 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-func-members}
+\Hypertarget{stm32f1xx__it_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32f1xx__it_8h_a850cefb17a977292ae5eb4cafa9976c3_a850cefb17a977292ae5eb4cafa9976c3}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!BusFault\_Handler@{BusFault\_Handler}}
+\index{BusFault\_Handler@{BusFault\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{BusFault\_Handler()}{BusFault\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a850cefb17a977292ae5eb4cafa9976c3_a850cefb17a977292ae5eb4cafa9976c3} 
+void Bus\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Prefetch fault, memory access fault. 
+
+\Hypertarget{stm32f1xx__it_8h_adbdfb05858cc36fc520974df37ec3cb0_adbdfb05858cc36fc520974df37ec3cb0}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!DebugMon\_Handler@{DebugMon\_Handler}}
+\index{DebugMon\_Handler@{DebugMon\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{DebugMon\_Handler()}{DebugMon\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_adbdfb05858cc36fc520974df37ec3cb0_adbdfb05858cc36fc520974df37ec3cb0} 
+void Debug\+Mon\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Debug monitor. 
+
+\Hypertarget{stm32f1xx__it_8h_ab5a1d9e9c8ef50e0cb9ddb5745a20a14_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!EXTI2\_IRQHandler@{EXTI2\_IRQHandler}}
+\index{EXTI2\_IRQHandler@{EXTI2\_IRQHandler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{EXTI2\_IRQHandler()}{EXTI2\_IRQHandler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_ab5a1d9e9c8ef50e0cb9ddb5745a20a14_ab5a1d9e9c8ef50e0cb9ddb5745a20a14} 
+void EXTI2\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles EXTI line2 interrupt. 
+
+\Hypertarget{stm32f1xx__it_8h_a30c045de96d18ec9c67a7b9e4350920f_a30c045de96d18ec9c67a7b9e4350920f}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!EXTI3\_IRQHandler@{EXTI3\_IRQHandler}}
+\index{EXTI3\_IRQHandler@{EXTI3\_IRQHandler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{EXTI3\_IRQHandler()}{EXTI3\_IRQHandler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a30c045de96d18ec9c67a7b9e4350920f_a30c045de96d18ec9c67a7b9e4350920f} 
+void EXTI3\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles EXTI line3 interrupt. 
+
+\Hypertarget{stm32f1xx__it_8h_a2bffc10d5bd4106753b7c30e86903bea_a2bffc10d5bd4106753b7c30e86903bea}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!HardFault\_Handler@{HardFault\_Handler}}
+\index{HardFault\_Handler@{HardFault\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{HardFault\_Handler()}{HardFault\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a2bffc10d5bd4106753b7c30e86903bea_a2bffc10d5bd4106753b7c30e86903bea} 
+void Hard\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Hard fault interrupt. 
+
+\Hypertarget{stm32f1xx__it_8h_a3150f74512510287a942624aa9b44cc5_a3150f74512510287a942624aa9b44cc5}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!MemManage\_Handler@{MemManage\_Handler}}
+\index{MemManage\_Handler@{MemManage\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{MemManage\_Handler()}{MemManage\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a3150f74512510287a942624aa9b44cc5_a3150f74512510287a942624aa9b44cc5} 
+void Mem\+Manage\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Memory management fault. 
+
+\Hypertarget{stm32f1xx__it_8h_a6ad7a5e3ee69cb6db6a6b9111ba898bc_a6ad7a5e3ee69cb6db6a6b9111ba898bc}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!NMI\_Handler@{NMI\_Handler}}
+\index{NMI\_Handler@{NMI\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{NMI\_Handler()}{NMI\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a6ad7a5e3ee69cb6db6a6b9111ba898bc_a6ad7a5e3ee69cb6db6a6b9111ba898bc} 
+void NMI\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Non maskable interrupt. 
+
+\Hypertarget{stm32f1xx__it_8h_a6303e1f258cbdc1f970ce579cc015623_a6303e1f258cbdc1f970ce579cc015623}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!PendSV\_Handler@{PendSV\_Handler}}
+\index{PendSV\_Handler@{PendSV\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{PendSV\_Handler()}{PendSV\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a6303e1f258cbdc1f970ce579cc015623_a6303e1f258cbdc1f970ce579cc015623} 
+void Pend\+SV\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Pendable request for system service. 
+
+\Hypertarget{stm32f1xx__it_8h_a3e5ddb3df0d62f2dc357e64a3f04a6ce_a3e5ddb3df0d62f2dc357e64a3f04a6ce}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!SVC\_Handler@{SVC\_Handler}}
+\index{SVC\_Handler@{SVC\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{SVC\_Handler()}{SVC\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a3e5ddb3df0d62f2dc357e64a3f04a6ce_a3e5ddb3df0d62f2dc357e64a3f04a6ce} 
+void SVC\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles System service call via SWI instruction. 
+
+\Hypertarget{stm32f1xx__it_8h_ab5e09814056d617c521549e542639b7e_ab5e09814056d617c521549e542639b7e}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!SysTick\_Handler@{SysTick\_Handler}}
+\index{SysTick\_Handler@{SysTick\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{SysTick\_Handler()}{SysTick\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_ab5e09814056d617c521549e542639b7e_ab5e09814056d617c521549e542639b7e} 
+void Sys\+Tick\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles System tick timer. 
+
+\Hypertarget{stm32f1xx__it_8h_ac8e51d2183b5230cbd5481f8867adce9_ac8e51d2183b5230cbd5481f8867adce9}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!TIM3\_IRQHandler@{TIM3\_IRQHandler}}
+\index{TIM3\_IRQHandler@{TIM3\_IRQHandler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{TIM3\_IRQHandler()}{TIM3\_IRQHandler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_ac8e51d2183b5230cbd5481f8867adce9_ac8e51d2183b5230cbd5481f8867adce9} 
+void TIM3\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles TIM3 global interrupt. 
+
+\Hypertarget{stm32f1xx__it_8h_a1d98923de2ed6b7309b66f9ba2971647_a1d98923de2ed6b7309b66f9ba2971647}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!UsageFault\_Handler@{UsageFault\_Handler}}
+\index{UsageFault\_Handler@{UsageFault\_Handler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{UsageFault\_Handler()}{UsageFault\_Handler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_a1d98923de2ed6b7309b66f9ba2971647_a1d98923de2ed6b7309b66f9ba2971647} 
+void Usage\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles Undefined instruction or illegal state. 
+
+\Hypertarget{stm32f1xx__it_8h_af57bde854fa2b396f29664995a502b19_af57bde854fa2b396f29664995a502b19}\index{stm32f1xx\_it.h@{stm32f1xx\_it.h}!USB\_LP\_CAN1\_RX0\_IRQHandler@{USB\_LP\_CAN1\_RX0\_IRQHandler}}
+\index{USB\_LP\_CAN1\_RX0\_IRQHandler@{USB\_LP\_CAN1\_RX0\_IRQHandler}!stm32f1xx\_it.h@{stm32f1xx\_it.h}}
+\doxysubsubsection{\texorpdfstring{USB\_LP\_CAN1\_RX0\_IRQHandler()}{USB\_LP\_CAN1\_RX0\_IRQHandler()}}
+{\footnotesize\ttfamily \label{stm32f1xx__it_8h_af57bde854fa2b396f29664995a502b19_af57bde854fa2b396f29664995a502b19} 
+void USB\+\_\+\+LP\+\_\+\+CAN1\+\_\+\+RX0\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function handles USB low priority or CAN RX0 interrupts. 
+

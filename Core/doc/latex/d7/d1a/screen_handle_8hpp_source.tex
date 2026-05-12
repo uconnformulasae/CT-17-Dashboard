@@ -1,0 +1,74 @@
+\doxysection{screen\+Handle.\+hpp}
+\hypertarget{screen_handle_8hpp_source}{}\label{screen_handle_8hpp_source}\index{Inc/screenHandle.hpp@{Inc/screenHandle.hpp}}
+\doxymbox{\hyperlink{screen_handle_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ Created\ on:\ Apr\ 18,\ 2025}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Phoenix\ Cardwell}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ UCONN\ Formula\ SAE\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_SCREENHANDLE\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \_\_SCREENHANDLE\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{main_8hpp}{main.hpp}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_rx_class_8hpp}{RxClass.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{main_8hpp}{main.hpp}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }ScreenHandler;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }ScreenPanel;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }Rx\_TypeDef;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Rx\_LapStats;}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{char}*\ formatTime(\textcolor{keywordtype}{int}\ ms);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }ScreenHandler\ \textcolor{comment}{//\ class\ to\ handle\ the\ screen\ dispaly}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ ScreenHandler()\ \{\ \_curScreen\ =\ 0;\ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//ScreenHandler(std::vector<ScreenPanel\&>\ screens)\ :\ \_screens(screens)\ \{\}}}
+\DoxyCodeLine{00030\ \ \ \ \ \string~ScreenHandler()\ \{\}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ startScreen();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ handle();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ nextScreen();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ prevScreen();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ addScreen(ScreenPanel*\ screen);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getIndex()\ \{\ \textcolor{keywordflow}{return}\ \_curScreen;\ \}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \_curScreen;\ \textcolor{comment}{//\ pointer\ to\ current\ screen}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ wait\ maybe\ i\ want\ curscreen\ to\ be\ an\ iterator}}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<ScreenPanel*>\ \_screens;\ \textcolor{comment}{//\ array\ of\ all\ screens}}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }ScreenPanel}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ ScreenPanel(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ Rx\_TypeDef**\ Data)\ :\ name(name),\ data(Data)\ \{\}}
+\DoxyCodeLine{00051\ \ \ \ \ \string~ScreenPanel()\ \{\}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ what\ do\ I\ need\ here?}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ Display();\ \textcolor{comment}{//\ displays\ to\ LCD\ screen}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ titleScreen();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ ButtonAction();\ \textcolor{comment}{//\ what\ does\ the\ button\ do\ when\ you\ click\ it}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ Rx\_TypeDef**\ data;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

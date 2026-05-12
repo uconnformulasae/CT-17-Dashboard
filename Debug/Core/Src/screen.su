@@ -1,0 +1,12 @@
+../Core/Src/screen.c:132:6:set_hi2c	8	static
+../Core/Src/screen.c:136:6:write_byte	32	static
+../Core/Src/screen.c:158:6:write_bytes	24	static
+../Core/Src/screen.c:165:6:write_bytes_const	24	static
+../Core/Src/screen.c:172:6:clear_display	8	static
+../Core/Src/screen.c:177:6:hide_cursor	8	static
+../Core/Src/screen.c:181:6:move_cursor	16	static
+../Core/Src/screen.c:189:6:set_FSAE_bitmap	16	static
+../Core/Src/screen.c:201:6:set_funBitmap	16	static
+../Core/Src/screen.c:216:6:write_bitmap	8	static
+../Core/Src/screen.c:228:6:display_FSAE_bootscreen	8	static
+../Core/Src/screen.c:239:6:reboot	8	static

@@ -1,0 +1,165 @@
+\doxysection{Src/\+system\+\_\+stm32f1xx.c File Reference}
+\hypertarget{system__stm32f1xx_8c}{}\label{system__stm32f1xx_8c}\index{Src/system\_stm32f1xx.c@{Src/system\_stm32f1xx.c}}
+
+
+CMSIS Cortex-\/\+M3 Device Peripheral Access Layer System Source File.  
+
+
+{\ttfamily \+\#include "{}stm32f1xx.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___defines_gaeafcff4f57440c60e64812dddd13e7cb_gaeafcff4f57440c60e64812dddd13e7cb}{HSE\+\_\+\+VALUE}}~8000000U
+\item 
+\+\#define \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___defines_gaaa8c76e274d0f6dd2cefb5d0b17fbc37_gaaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE}}~8000000U
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the System\+Core\+Clock variable. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Update System\+Core\+Clock variable according to Clock Register Values. The System\+Core\+Clock variable contains the core clock (HCLK), it can be used by the user application to setup the Sys\+Tick timer or configure other parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___variables_gaa3cd3e43291e81e795d642b79b6088e6_gaa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = 8000000
+\item 
+const uint8\+\_\+t \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___variables_ga53cb26d01524d9560f98101a2c597c40_ga53cb26d01524d9560f98101a2c597c40}{AHBPresc\+Table}} \+[16U]\+ = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}
+\item 
+const uint8\+\_\+t \doxymbox{\hyperlink{group___s_t_m32_f1xx___system___private___variables_gaa93c123312c9273c0928a79f1203f759_gaa93c123312c9273c0928a79f1203f759}{APBPresc\+Table}} \+[8U]\+ = \{0, 0, 0, 0, 1, 2, 3, 4\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS Cortex-\/\+M3 Device Peripheral Access Layer System Source File. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+
+\begin{DoxyEnumerate}
+\item This file provides two functions and one global variable to be called from user application:\+
+\begin{DoxyItemize}
+\item \doxylink{group___s_t_m32_f1xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()}:\+ Setups the system clock (System clock source, PLL Multiplier factors, AHB/\+\+APBx prescalers and Flash settings). This function is called at startup just after reset and before branch to main program. This call is made inside the "{}startup\+\_\+stm32f1xx\+\_\+xx.\+s"{} file.
+\item System\+Core\+Clock variable:\+ Contains the core clock (HCLK), it can be used by the user application to setup the Sys\+Tick timer or configure other parameters.
+\item \doxylink{group___s_t_m32_f1xx___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update()}:\+ Updates the variable System\+Core\+Clock and must be called whenever the core clock is changed during program execution.
+\end{DoxyItemize}
+\item After each device reset the HSI (8 MHz) is used as system clock source. Then \doxylink{group___s_t_m32_f1xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()} function is called, in "{}startup\+\_\+stm32f1xx\+\_\+xx.\+s"{} file, to configure the system clock before to branch to main program.
+\item The default value of HSE crystal is set to 8 MHz (or 25 MHz, depending on the product used), refer to "{}\+HSE\+\_\+\+VALUE"{}. When HSE is used as system clock source, directly or through PLL, and you are using different crystal you have to adapt the HSE value to your own configuration.
+\end{DoxyEnumerate}
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017-\/2021 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-define-members}
+\Hypertarget{system__stm32f1xx_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group___s_t_m32_f1xx___system___private___defines_gaeafcff4f57440c60e64812dddd13e7cb_gaeafcff4f57440c60e64812dddd13e7cb}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!HSE\_VALUE@{HSE\_VALUE}}
+\index{HSE\_VALUE@{HSE\_VALUE}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{HSE\_VALUE}{HSE\_VALUE}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___defines_gaeafcff4f57440c60e64812dddd13e7cb_gaeafcff4f57440c60e64812dddd13e7cb} 
+\+\#define HSE\+\_\+\+VALUE~8000000U}
+
+Default value of the External oscillator in Hz. This value can be provided and adapted by the user application. \Hypertarget{group___s_t_m32_f1xx___system___private___defines_gaaa8c76e274d0f6dd2cefb5d0b17fbc37_gaaa8c76e274d0f6dd2cefb5d0b17fbc37}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!HSI\_VALUE@{HSI\_VALUE}}
+\index{HSI\_VALUE@{HSI\_VALUE}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{HSI\_VALUE}{HSI\_VALUE}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___defines_gaaa8c76e274d0f6dd2cefb5d0b17fbc37_gaaa8c76e274d0f6dd2cefb5d0b17fbc37} 
+\+\#define HSI\+\_\+\+VALUE~8000000U}
+
+Default value of the Internal oscillator in Hz. This value can be provided and adapted by the user application. 
+
+\label{doc-func-members}
+\Hypertarget{system__stm32f1xx_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group___s_t_m32_f1xx___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f_gae0c36a9591fe6e9c45ecb21a794f0f0f}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!SystemCoreClockUpdate@{SystemCoreClockUpdate}}
+\index{SystemCoreClockUpdate@{SystemCoreClockUpdate}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{SystemCoreClockUpdate()}{SystemCoreClockUpdate()}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f_gae0c36a9591fe6e9c45ecb21a794f0f0f} 
+void System\+Core\+Clock\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Update System\+Core\+Clock variable according to Clock Register Values. The System\+Core\+Clock variable contains the core clock (HCLK), it can be used by the user application to setup the Sys\+Tick timer or configure other parameters. 
+
+\begin{DoxyNote}{Note}
+Each time the core clock (HCLK) changes, this function must be called to update System\+Core\+Clock variable value. Otherwise, any configuration based on this variable will be incorrect. ~\newline
+
+
+-\/ The system frequency computed by this function is not the real frequency in the chip. It is calculated based on the predefined constant and the selected clock source:\+
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item If SYSCLK source is HSI, System\+Core\+Clock will contain the \doxylink{group___s_t_m32_f1xx___system___private___defines_gaaa8c76e274d0f6dd2cefb5d0b17fbc37_gaaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE(\texorpdfstring{$\ast$}{*})}
+\item If SYSCLK source is HSE, System\+Core\+Clock will contain the \doxylink{group___s_t_m32_f1xx___system___private___defines_gaeafcff4f57440c60e64812dddd13e7cb_gaeafcff4f57440c60e64812dddd13e7cb}{HSE\+\_\+\+VALUE(\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})}
+\item If SYSCLK source is PLL, System\+Core\+Clock will contain the \doxylink{group___s_t_m32_f1xx___system___private___defines_gaeafcff4f57440c60e64812dddd13e7cb_gaeafcff4f57440c60e64812dddd13e7cb}{HSE\+\_\+\+VALUE(\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})} or \doxylink{group___s_t_m32_f1xx___system___private___defines_gaaa8c76e274d0f6dd2cefb5d0b17fbc37_gaaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE(\texorpdfstring{$\ast$}{*})} multiplied by the PLL factors.
+\end{DoxyItemize}
+
+(\texorpdfstring{$\ast$}{*}) HSI\+\_\+\+VALUE is a constant defined in stm32f1xx.\+h file (default value 8 MHz) but the real value may vary depending on the variations in voltage and temperature. ~\newline
+
+
+(\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}) HSE\+\_\+\+VALUE is a constant defined in stm32f1xx.\+h file (default value 8 MHz or 25 MHz, depending on the product used), user has to ensure that HSE\+\_\+\+VALUE is same as the real frequency of the crystal used. Otherwise, this function may have wrong result.
+
+
+\begin{DoxyItemize}
+\item The result of this function could be not correct when using fractional value for HSE crystal. 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}\Hypertarget{group___s_t_m32_f1xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2_ga93f514700ccf00d08dbdcff7f1224eb2}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!SystemInit@{SystemInit}}
+\index{SystemInit@{SystemInit}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{SystemInit()}{SystemInit()}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2_ga93f514700ccf00d08dbdcff7f1224eb2} 
+void System\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the System\+Core\+Clock variable. 
+
+\begin{DoxyNote}{Note}
+This function should be used only after reset. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+\label{doc-var-members}
+\Hypertarget{system__stm32f1xx_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{group___s_t_m32_f1xx___system___private___variables_ga53cb26d01524d9560f98101a2c597c40_ga53cb26d01524d9560f98101a2c597c40}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!AHBPrescTable@{AHBPrescTable}}
+\index{AHBPrescTable@{AHBPrescTable}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{AHBPrescTable}{AHBPrescTable}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___variables_ga53cb26d01524d9560f98101a2c597c40_ga53cb26d01524d9560f98101a2c597c40} 
+const uint8\+\_\+t AHBPresc\+Table\+[16U]\+ = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}}
+
+\Hypertarget{group___s_t_m32_f1xx___system___private___variables_gaa93c123312c9273c0928a79f1203f759_gaa93c123312c9273c0928a79f1203f759}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!APBPrescTable@{APBPrescTable}}
+\index{APBPrescTable@{APBPrescTable}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{APBPrescTable}{APBPrescTable}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___variables_gaa93c123312c9273c0928a79f1203f759_gaa93c123312c9273c0928a79f1203f759} 
+const uint8\+\_\+t APBPresc\+Table\+[8U]\+ = \{0, 0, 0, 0, 1, 2, 3, 4\}}
+
+\Hypertarget{group___s_t_m32_f1xx___system___private___variables_gaa3cd3e43291e81e795d642b79b6088e6_gaa3cd3e43291e81e795d642b79b6088e6}\index{system\_stm32f1xx.c@{system\_stm32f1xx.c}!SystemCoreClock@{SystemCoreClock}}
+\index{SystemCoreClock@{SystemCoreClock}!system\_stm32f1xx.c@{system\_stm32f1xx.c}}
+\doxysubsubsection{\texorpdfstring{SystemCoreClock}{SystemCoreClock}}
+{\footnotesize\ttfamily \label{group___s_t_m32_f1xx___system___private___variables_gaa3cd3e43291e81e795d642b79b6088e6_gaa3cd3e43291e81e795d642b79b6088e6} 
+uint32\+\_\+t System\+Core\+Clock = 8000000}
+

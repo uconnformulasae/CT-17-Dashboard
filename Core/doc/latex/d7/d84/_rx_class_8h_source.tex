@@ -1,0 +1,52 @@
+\doxysection{Rx\+Class.\+h}
+\hypertarget{_rx_class_8h_source}{}\label{_rx_class_8h_source}\index{Inc/RxClass.h@{Inc/RxClass.h}}
+\doxymbox{\hyperlink{_rx_class_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ RxClass.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Apr\ 18,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Phoenix\ Cardwell}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ UCONN\ Formula\ SAE\ 2025}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_RXCLASS\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_RXCLASS\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Rx\_TypeDef;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00018\ \ \ \ \ TIME,}
+\DoxyCodeLine{00019\ \ \ \ \ FLOAT,}
+\DoxyCodeLine{00020\ \ \ \ \ INT}
+\DoxyCodeLine{00021\ \}\ DATA\_TYPES;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Rx\_TypeDef\{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ Rx\_TypeDef()\ \{\}}
+\DoxyCodeLine{00025\ \ \ \ \ Rx\_TypeDef(uint16\_t\ ID,\ DATA\_TYPES\ type\ =\ INT,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label\ =\ \textcolor{stringliteral}{"{}"{}})\ :\ \_ID(ID),}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_type(type),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_label(label)\ \{\ \_val\ =\ 0;\ \_float\ =\ 0;\}}
+\DoxyCodeLine{00028\ \ \ \ \ \string~Rx\_TypeDef()\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ uint32\_t\ getID()\ \{\ \textcolor{keywordflow}{return}\ \_ID;\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ uint32\_t\ getValue()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_val;\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ getFloat()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \_float;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ getLabel()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_label;\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ DATA\_TYPES\ getType()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_type;\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Update(\textcolor{keywordtype}{int}\ val)\ \{\ \_val\ =\ val;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \_UpdateFloat(\textcolor{keywordtype}{float}\ flt)\ \{\ \_float\ =\ flt;\ \}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \_val;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \_float;}
+\DoxyCodeLine{00040\ \ \ \ \ uint32\_t\ \_ID;}
+\DoxyCodeLine{00041\ \ \ \ \ DATA\_TYPES\ \_type;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_label;}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_RXCLASS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

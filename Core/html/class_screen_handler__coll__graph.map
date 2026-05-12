@@ -1,0 +1,9 @@
+<map id="ScreenHandler" name="ScreenHandler">
+<area shape="rect" id="Node000001" title="A class to handle the screen." alt="" coords="32,792,158,1032"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,651,185,720"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,717,98,775,93,774,95,722"/>
+<area shape="rect" id="Node000003" href="$class_screen_panel.html" title=" " alt="" coords="38,424,152,579"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,576,98,634,93,633,95,581"/>
+<area shape="rect" id="Node000004" href="$class_rx___type_def.html" title=" " alt="" coords="39,5,152,352"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,349,98,407,93,407,95,354"/>
+</map>

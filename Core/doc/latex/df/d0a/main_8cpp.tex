@@ -1,0 +1,1133 @@
+\doxysection{Src/\+main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{Src/main.cpp@{Src/main.cpp}}
+{\ttfamily \+\#include $<$main.\+h$>$}\newline
+{\ttfamily \+\#include $<$screen\+Handle.\+h$>$}\newline
+{\ttfamily \+\#include "{}screen.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a4e1c6ea41691574754a85843373594b1_a4e1c6ea41691574754a85843373594b1}{RPM\+\_\+\+REG}}~GPIOA
+\begin{DoxyCompactList}\small\item\em RPM shift register stuff. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_af9b157017736a977b461a5c6d12f60b9_af9b157017736a977b461a5c6d12f60b9}{RPM\+\_\+\+LE}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_af944007d309383b270caddab4bff7e27_af944007d309383b270caddab4bff7e27}{RPM\+\_\+\+SCK}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a15d8ab1447d66ece0ae489184e827acc_a15d8ab1447d66ece0ae489184e827acc}{RPM\+\_\+\+OE}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a916c638cffcab1620ff78bb43be47ff4_a916c638cffcab1620ff78bb43be47ff4}{RPM\+\_\+\+MOSI}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a93289da04e9ce586ca0c836e45abc042_a93289da04e9ce586ca0c836e45abc042}{GEAR\+\_\+\+REG}}~GPIOB
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a8eb6154c4a9c70e90c7fb84ba02ffede_a8eb6154c4a9c70e90c7fb84ba02ffede}{GEAR\+\_\+\+REG\+\_\+\+OE}}~GPIOA
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a16c7dd58a3f2a9f7f275cdb8e9430dd9_a16c7dd58a3f2a9f7f275cdb8e9430dd9}{GEAR\+\_\+\+OE}}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_af8a1786cca0a837024845c6b65b60bd8_af8a1786cca0a837024845c6b65b60bd8}{GEAR\+\_\+\+SCK}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_aec65b3c935696d689aa70bfdf532ed1d_aec65b3c935696d689aa70bfdf532ed1d}{GEAR\+\_\+\+LE}}~GPIO\+\_\+\+PIN\+\_\+14
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a1ed7f136f83336798b35bb936625471a_a1ed7f136f83336798b35bb936625471a}{GEAR\+\_\+\+MOSI}}~GPIO\+\_\+\+PIN\+\_\+15
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a24e2ee44da9e389e383c68daca6c6fbb_a24e2ee44da9e389e383c68daca6c6fbb}{WARN\+\_\+\+REG}}~GPIOB
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a7b3889ae8609823370e500e44ebe8a5d_a7b3889ae8609823370e500e44ebe8a5d}{WARN\+\_\+1}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a514ac2ed83b380af080e01e88ce8b869_a514ac2ed83b380af080e01e88ce8b869}{WARN\+\_\+2}}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a0901b00b7fda0e5daa43766d1df38593_a0901b00b7fda0e5daa43766d1df38593}{REV\+\_\+\+LIM}}~GPIO\+\_\+\+PIN\+\_\+12
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_aa8d698d8a2c8cd96e79096909bc26647_aa8d698d8a2c8cd96e79096909bc26647}{SCREEN\+\_\+\+REG}}~GPIOB
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_af876208e76cdfd5cd2b38a81ede1e2de_af876208e76cdfd5cd2b38a81ede1e2de}{SCREEN\+\_\+\+SCL}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ab10834549c612120a38bbe7ce4f57bdc_ab10834549c612120a38bbe7ce4f57bdc}{SCREEN\+\_\+\+SDA}}~GPIO\+\_\+\+PIN7
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_accde32615749cc604bcb98b65b80291c_accde32615749cc604bcb98b65b80291c}{CAN\+\_\+\+REGISTER}}~GPIOB
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a432cd1f58398a7dbba4a3fffa9e2a151_a432cd1f58398a7dbba4a3fffa9e2a151}{CAN\+\_\+\+RX}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a2e2a30d5cdfd6401500776811d46cc0a_a2e2a30d5cdfd6401500776811d46cc0a}{CAN\+\_\+\+TX}}~GPIO\+\_\+\+PIN9
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ad0d0bdd5242aaa7aa76f00d47799d0ae_ad0d0bdd5242aaa7aa76f00d47799d0ae}{LED\+\_\+\+MASK}}~0x\+FFFF
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a03f0cc69336f88fcd5943808f19bab28_a03f0cc69336f88fcd5943808f19bab28}{RPM\+\_\+\+MAX}}~14000
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a95d2438b8b3665998ef9429c47b6eed8_a95d2438b8b3665998ef9429c47b6eed8}{ONE\+\_\+\+LED}}~\doxymbox{\hyperlink{main_8cpp_a03f0cc69336f88fcd5943808f19bab28_a03f0cc69336f88fcd5943808f19bab28}{RPM\+\_\+\+MAX}} /\+ 30
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_afb20c0ba86704f06e1281b9456ac31e4_afb20c0ba86704f06e1281b9456ac31e4}{SCROLL\+\_\+\+REG}}~GPIOA
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_acc41d32fbddc2ea8996a60cc348545ad_acc41d32fbddc2ea8996a60cc348545ad}{SCROLL\+\_\+\+PINA}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a9417e09683517b8bb7b79674635cb6a8_a9417e09683517b8bb7b79674635cb6a8}{SCROLL\+\_\+\+PINB}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ad475217c28645ec178b59c745f3fc3ba_ad475217c28645ec178b59c745f3fc3ba}{BTN}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_adae205cb32a01091ddcd99fb093a2203_adae205cb32a01091ddcd99fb093a2203}{GEAR\+\_\+\+ID}}~0x60E
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ae2070bde5b3331e93ee388bdcf047073_ae2070bde5b3331e93ee388bdcf047073}{LIMP\+\_\+\+ID}}~0x61E
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a3c42461e1426d98e3380507b8a91265d_a3c42461e1426d98e3380507b8a91265d}{EOP\+\_\+\+ID}}~0x608
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a5e0abd712518f4256f34430053b24c41_a5e0abd712518f4256f34430053b24c41}{VBAT\+\_\+\+ID}}~0x60C
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_aa6b9fda5a62927cb4b03351e2fb5d112_aa6b9fda5a62927cb4b03351e2fb5d112}{RPM\+\_\+\+ID}}~0x600
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ae376a3b49deb3e94552b1e8e72a8a703_ae376a3b49deb3e94552b1e8e72a8a703}{OILTEMP\+\_\+\+ID}}~0x604
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ac9fd4daf777ed2e76998ddd2d3884e5b_ac9fd4daf777ed2e76998ddd2d3884e5b}{ECT\+\_\+\+ID}}~0x605
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_aedaa69675854497ff1190a26a53fde10_aedaa69675854497ff1190a26a53fde10}{SPEED\+\_\+\+ID}}~0x779
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a5094932411c4f4c72fe40914cd26beb6_a5094932411c4f4c72fe40914cd26beb6}{LAMBDA\+\_\+\+ID}}~0x602
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_aaa8e4f8b2064cefa510e9be42519c348_aaa8e4f8b2064cefa510e9be42519c348}{LAPTIME\+\_\+\+ID}}~0x777
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a82b51fcb29017911f3b72197da84fe01_a82b51fcb29017911f3b72197da84fe01}{BRAKEBIAS\+\_\+\+ID}}~0x779
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ace8b86ebbbf10f6c2bee718447fde136_ace8b86ebbbf10f6c2bee718447fde136}{DIFFBEST\+\_\+\+ID}}~0x778
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a0ee65dbd36d7f34dfccc8e382ecf859d_a0ee65dbd36d7f34dfccc8e382ecf859d}{ROLLTIME\+\_\+\+ID}}~0x780
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ac20dc2cff166c6419cef2c6741f36556_ac20dc2cff166c6419cef2c6741f36556}{SESSTIME\+\_\+\+ID}}~0x780
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a8967e9a6baa45466aa3076901ceece87_a8967e9a6baa45466aa3076901ceece87}{BESTTIME\+\_\+\+ID}}~0x778
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_acb0993b9dcfddfaf3f7333db212532d0_acb0993b9dcfddfaf3f7333db212532d0}{BRAKES\+\_\+\+ID}}~0x580
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_a8facfc52f8d12ba515600501358d19f4_a8facfc52f8d12ba515600501358d19f4}{G\+\_\+\+ID}}~0x580
+\item 
+\+\#define \doxymbox{\hyperlink{main_8cpp_ae1f85f9e7b5fdfea8b48f268556ca617_ae1f85f9e7b5fdfea8b48f268556ca617}{TPS\+\_\+\+ID}}~0x61B
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a70af21c671abfcc773614a9a4f63d920_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_ae89fdd15729ad41a66911190fcbab23a_ae89fdd15729ad41a66911190fcbab23a}{MX\+\_\+\+GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em GPIO Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a0f1dd94da70ff01c04d9aa1bcbbe4eee_a0f1dd94da70ff01c04d9aa1bcbbe4eee}{MX\+\_\+\+CAN\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em CAN Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a28dbf2494083ac5f39daa87bf09e4eb3_a28dbf2494083ac5f39daa87bf09e4eb3}{MX\+\_\+\+SPI1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em SPI1 Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_ade0c8abfcfc1615647bfdd244bd1ee00_ade0c8abfcfc1615647bfdd244bd1ee00}{MX\+\_\+\+SPI2\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em SPI2 Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a1d1beb7da60021ee1adbca294f28ba88_a1d1beb7da60021ee1adbca294f28ba88}{MX\+\_\+\+TIM1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em TIM1 Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a4230d11f81d0b16e112f1cc3f40cb42f_a4230d11f81d0b16e112f1cc3f40cb42f}{MX\+\_\+\+I2\+C1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em I2\+C1 Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a73ff2ff527606fb2be261e9f85aab83c_a73ff2ff527606fb2be261e9f85aab83c}{MX\+\_\+\+TIM3\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em TIM3 Initialization Function. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{main_8cpp_a62f4b77e20bccafe98a183771749c20c_a62f4b77e20bccafe98a183771749c20c}{MX\+\_\+\+USART1\+\_\+\+UART\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em USART1 Initialization Function. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a1d8b48903fa3c7fd537103ea3979b53f_a1d8b48903fa3c7fd537103ea3979b53f}{set\+\_\+hi2c}} (I2\+C\+\_\+\+Handle\+Type\+Def hi2c)
+\item 
+void \doxymbox{\hyperlink{main_8cpp_aefe4cf995520af8dfd3007988104e03f_aefe4cf995520af8dfd3007988104e03f}{rpm\+LEDs}} (uint32\+\_\+t ledseq)
+\begin{DoxyCompactList}\small\item\em Sets RPM LEDs to uint32\+\_\+t pattern. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a6e83521e189864cb6a771cbdbfe6ba8c_a6e83521e189864cb6a771cbdbfe6ba8c}{startup\+Seq}} ()
+\begin{DoxyCompactList}\small\item\em Plays the startup sequence for when car turns on. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a8d2e1ff5f0d9737e9d7e68efa8ebb49c_a8d2e1ff5f0d9737e9d7e68efa8ebb49c}{gear\+LEDs}} (uint8\+\_\+t ledseq)
+\begin{DoxyCompactList}\small\item\em Sets gear LEDs to uint16\+\_\+t pattern. \end{DoxyCompactList}\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a47bc313f4e0ddb9de8daa9be4eb96233_a47bc313f4e0ddb9de8daa9be4eb96233}{gear}} (0x60E, INT, "{}"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_ae4486a0567ecf3d65834bbbc53953f6f_ae4486a0567ecf3d65834bbbc53953f6f}{limp\+Mode}} (0x61E, INT, "{}Limp:\+ \%d"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a85d1784a323fb0add2d3fefa4906d711_a85d1784a323fb0add2d3fefa4906d711}{EOP}} (0x608, FLOAT, "{}Oil Pressure:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a6b03fc41f255cd40e19e96f8036406e2_a6b03fc41f255cd40e19e96f8036406e2}{v\+Bat}} (0x60C, FLOAT, "{}v\+Bat:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_afa37193453e79c0da73b9b1605b99466_afa37193453e79c0da73b9b1605b99466}{RPM}} (0x600, INT, "{}RPM:\+ \%d"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_afa9b15921609ce871558f07a45a702e6_afa9b15921609ce871558f07a45a702e6}{oil\+Temp}} (0x604, FLOAT)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a6e61683d3ff140d5dc9d4a6376c71953_a6e61683d3ff140d5dc9d4a6376c71953}{ECT}} (0x605, FLOAT, "{}ECT:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a3d3d5fa8f2640efe2d1a3eb5ba1d798c_a3d3d5fa8f2640efe2d1a3eb5ba1d798c}{lambda}} (0x602, FLOAT, "{}Lambda:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a35d56bfe5226279424cc857283429440_a35d56bfe5226279424cc857283429440}{speed}} (0x779, INT,"{}Speed:\+ \%d MPH    "{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_aef5d0d0e87548908ddf22c41681722f6_aef5d0d0e87548908ddf22c41681722f6}{laptime}} (0x777, TIME, "{}Time:\+ \%s"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a3618831445f51210298d88fd7986355c_a3618831445f51210298d88fd7986355c}{lapnum}} (0x777, INT, "{}Lap\+\#:\+ \%d"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a24721c08b9d1d6a8d6de70bce6a64b71_a24721c08b9d1d6a8d6de70bce6a64b71}{brake\+Bias}} (0x779, FLOAT)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_af9b6dbe36c0f4dd2fe281716380cd7de_af9b6dbe36c0f4dd2fe281716380cd7de}{diff\+Best}} (0x778, TIME)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a6dae61e334d29443e0b0709e641764a7_a6dae61e334d29443e0b0709e641764a7}{roll\+Time}} (0x780, TIME)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a556d39c4cd770cfdfd4a156788b04bbd_a556d39c4cd770cfdfd4a156788b04bbd}{sess\+Time}} (0x780, TIME)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a23a74557e59a4a94c58de82ba021afdd_a23a74557e59a4a94c58de82ba021afdd}{best\+Time}} (0x778, TIME)
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a2d110aaeb4bc8efe6cd58cbf454c4017_a2d110aaeb4bc8efe6cd58cbf454c4017}{f\+BrakeP}} (0x580, FLOAT, "{}Front P:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a3c03ae4c653c359e48368a1fde7a0c14_a3c03ae4c653c359e48368a1fde7a0c14}{r\+BrakeP}} (0x580, FLOAT, "{}Rear P:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_af5075742f6002d04bc90d45c8951fd4e_af5075742f6002d04bc90d45c8951fd4e}{latG}} (0x581, FLOAT, "{}Lat G:\+ \%.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_ae931cfb7d0660fceb65dcb2ab32ac727_ae931cfb7d0660fceb65dcb2ab32ac727}{forwardG}} (0x581, FLOAT, "{}Forward G:\+ \%0.\+3f"{})
+\item 
+Rx\+\_\+\+Type\+Def \doxymbox{\hyperlink{main_8cpp_ad976c2c89bc95dbeb99a6f59c3ed9c71_ad976c2c89bc95dbeb99a6f59c3ed9c71}{tps}} (\doxymbox{\hyperlink{main_8cpp_ae1f85f9e7b5fdfea8b48f268556ca617_ae1f85f9e7b5fdfea8b48f268556ca617}{TPS\+\_\+\+ID}}, INT, "{}Throttle:\+ \%d \textbackslash{}\%"{})
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a190d3285afabce00bc9e79bfe7fda3c7_a190d3285afabce00bc9e79bfe7fda3c7}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+pin)
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a7368d39e78009c017d6f81ccf33b9b2c_a7368d39e78009c017d6f81ccf33b9b2c}{HAL\+\_\+\+CAN\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback}} (CAN\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}\doxymbox{\hyperlink{main_8cpp_ae21c10daa2f8cbd18a0e66bb28a19d2d_ae21c10daa2f8cbd18a0e66bb28a19d2d}{hcan}})
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a7d66b579f821d2020efe09909576f6d1_a7d66b579f821d2020efe09909576f6d1}{LED\+\_\+on}} ()
+\begin{DoxyCompactList}\small\item\em Enables shift register LEDs. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a2409acb6029fd30d5aa1f71e8f9fcda4_a2409acb6029fd30d5aa1f71e8f9fcda4}{LED\+\_\+off}} ()
+\begin{DoxyCompactList}\small\item\em turns all shift reg LEDs off \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46}{reverse\+Bits}} (uint8\+\_\+t in\+\_\+bits)
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a}{set\+Brightness}} (float amount)
+\begin{DoxyCompactList}\small\item\em Set brightness amount withing range 1-\/10. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+CAN\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_ae21c10daa2f8cbd18a0e66bb28a19d2d_ae21c10daa2f8cbd18a0e66bb28a19d2d}{hcan}}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_af7b2c26e44dadaaa798a5c3d82914ba7_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
+\item 
+SPI\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a9c6222bae4d0328dd843ae099623b40b_a9c6222bae4d0328dd843ae099623b40b}{hspi1}}
+\item 
+SPI\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_ab9da65f935e805137e2eb4e18c5ab224_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a25fc663547539bc49fecc0011bd76ab5_a25fc663547539bc49fecc0011bd76ab5}{htim1}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_aac3d2c59ee0e3bbae1b99529a154eb62_aac3d2c59ee0e3bbae1b99529a154eb62}{htim3}}
+\item 
+UART\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a2cf715bef37f7e8ef385a30974a5f0d5_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\item 
+uint16\+\_\+t \doxymbox{\hyperlink{main_8cpp_a36d2b2a2416318bd9501b0c366fcb550_a36d2b2a2416318bd9501b0c366fcb550}{startnum}} \+[8]\+ = \{0b1110111, 0b0100010, 0b1101101, 0b1011101, 0b0011110, 0b1011011, 0b1111011, 0b0011111\}
+\item 
+uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a0b57aa10271a66f3dc936bba1d2f3830_a0b57aa10271a66f3dc936bba1d2f3830}{state}} = 0x00
+\item 
+CAN\+\_\+\+Tx\+Header\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a20b28c9a63d0542dc9c80d08a59bed16_a20b28c9a63d0542dc9c80d08a59bed16}{Tx\+Reader}}
+\item 
+CAN\+\_\+\+Rx\+Header\+Type\+Def \doxymbox{\hyperlink{main_8cpp_a6ee6e13063b860648180eea65852cc71_a6ee6e13063b860648180eea65852cc71}{Rx\+Header}}
+\item 
+uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a14629afcc7f0b2d62c2b617b07d98184_a14629afcc7f0b2d62c2b617b07d98184}{Rx\+Data}} \+[8]\+
+\item 
+int \doxymbox{\hyperlink{main_8cpp_ac07287fa36230a821ae310ab1772d927_ac07287fa36230a821ae310ab1772d927}{RX\+\_\+\+FLAG}} = 0
+\item 
+volatile uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_acde2de37a97eb02bac2abc58d59abdef_acde2de37a97eb02bac2abc58d59abdef}{rot\+\_\+state}} = 0
+\item 
+\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e}{GEARS}} \doxymbox{\hyperlink{main_8cpp_a6fa77f4e712ef1ba7ccb773574c149df_a6fa77f4e712ef1ba7ccb773574c149df}{gearz}} \+[7]\+ = \{\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaf46d14eb9d5d71afc9f6e747689fcb56}{NEUTRAL}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea7a725f13af144bdef532d0389ba75e0d}{ONE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea0e793500a63ffa575b9b712ca3bc9851}{TWO}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea1251fbf93888ad32fe0ae54d49bcef17}{THREE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea23d7ef5341c6930d19b2ecbb997977cf}{FOUR}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea3a40d11d30db182ab8f9846aa9458bec}{FIVE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaadffddd32c3e7497e32cd7e430c9c106}{SIX}}\}
+\item 
+Screen\+Handler \doxymbox{\hyperlink{main_8cpp_a4b7b16441f0d9af12f5db16f617a0601_a4b7b16441f0d9af12f5db16f617a0601}{dash\+Screen}}
+\item 
+volatile uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a6f567f9dce2e689c33a8f04695e65e0e_a6f567f9dce2e689c33a8f04695e65e0e}{next}} = 0
+\item 
+volatile uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a61e9febb3f5ef718e2c27b86e563c4ed_a61e9febb3f5ef718e2c27b86e563c4ed}{back}} = 0
+\item 
+volatile uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a7c896b42a4a6db2c6e29f2b13ae4f078_a7c896b42a4a6db2c6e29f2b13ae4f078}{btn}} = 0
+\item 
+uint8\+\_\+t \doxymbox{\hyperlink{main_8cpp_a5a353c7bd4a78f8f65b8ce4898305ae5_a5a353c7bd4a78f8f65b8ce4898305ae5}{set\+Bright}} = 0
+\item 
+float \doxymbox{\hyperlink{main_8cpp_a05700026990108a4cbee1619771a040f_a05700026990108a4cbee1619771a040f}{brightness}} = 0.\+05
+\item 
+volatile uint32\+\_\+t \doxymbox{\hyperlink{main_8cpp_a2110169bed39e6276cb2d5871d0499ae_a2110169bed39e6276cb2d5871d0499ae}{eop\+\_\+rawval}}
+\item 
+volatile int \doxymbox{\hyperlink{main_8cpp_a42255c740f154f2b7182e90dd75fe7a8_a42255c740f154f2b7182e90dd75fe7a8}{NUM\+\_\+\+LEDS}} = 0
+\item 
+int \doxymbox{\hyperlink{main_8cpp_a2560f489591e4c3e1cab61cbda94f4de_a2560f489591e4c3e1cab61cbda94f4de}{prev\+\_\+btn}} = 1
+\item 
+int \doxymbox{\hyperlink{main_8cpp_a1e216fc830b4dd496536d9304384be01_a1e216fc830b4dd496536d9304384be01}{cur\+\_\+btn}} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{main_8cpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8cpp_a8967e9a6baa45466aa3076901ceece87_a8967e9a6baa45466aa3076901ceece87}\index{main.cpp@{main.cpp}!BESTTIME\_ID@{BESTTIME\_ID}}
+\index{BESTTIME\_ID@{BESTTIME\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BESTTIME\_ID}{BESTTIME\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a8967e9a6baa45466aa3076901ceece87_a8967e9a6baa45466aa3076901ceece87} 
+\+\#define BESTTIME\+\_\+\+ID~0x778}
+
+\Hypertarget{main_8cpp_a82b51fcb29017911f3b72197da84fe01_a82b51fcb29017911f3b72197da84fe01}\index{main.cpp@{main.cpp}!BRAKEBIAS\_ID@{BRAKEBIAS\_ID}}
+\index{BRAKEBIAS\_ID@{BRAKEBIAS\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BRAKEBIAS\_ID}{BRAKEBIAS\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a82b51fcb29017911f3b72197da84fe01_a82b51fcb29017911f3b72197da84fe01} 
+\+\#define BRAKEBIAS\+\_\+\+ID~0x779}
+
+\Hypertarget{main_8cpp_acb0993b9dcfddfaf3f7333db212532d0_acb0993b9dcfddfaf3f7333db212532d0}\index{main.cpp@{main.cpp}!BRAKES\_ID@{BRAKES\_ID}}
+\index{BRAKES\_ID@{BRAKES\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BRAKES\_ID}{BRAKES\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_acb0993b9dcfddfaf3f7333db212532d0_acb0993b9dcfddfaf3f7333db212532d0} 
+\+\#define BRAKES\+\_\+\+ID~0x580}
+
+\Hypertarget{main_8cpp_ad475217c28645ec178b59c745f3fc3ba_ad475217c28645ec178b59c745f3fc3ba}\index{main.cpp@{main.cpp}!BTN@{BTN}}
+\index{BTN@{BTN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BTN}{BTN}}
+{\footnotesize\ttfamily \label{main_8cpp_ad475217c28645ec178b59c745f3fc3ba_ad475217c28645ec178b59c745f3fc3ba} 
+\+\#define BTN~GPIO\+\_\+\+PIN\+\_\+1}
+
+\Hypertarget{main_8cpp_accde32615749cc604bcb98b65b80291c_accde32615749cc604bcb98b65b80291c}\index{main.cpp@{main.cpp}!CAN\_REGISTER@{CAN\_REGISTER}}
+\index{CAN\_REGISTER@{CAN\_REGISTER}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CAN\_REGISTER}{CAN\_REGISTER}}
+{\footnotesize\ttfamily \label{main_8cpp_accde32615749cc604bcb98b65b80291c_accde32615749cc604bcb98b65b80291c} 
+\+\#define CAN\+\_\+\+REGISTER~GPIOB}
+
+\Hypertarget{main_8cpp_a432cd1f58398a7dbba4a3fffa9e2a151_a432cd1f58398a7dbba4a3fffa9e2a151}\index{main.cpp@{main.cpp}!CAN\_RX@{CAN\_RX}}
+\index{CAN\_RX@{CAN\_RX}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CAN\_RX}{CAN\_RX}}
+{\footnotesize\ttfamily \label{main_8cpp_a432cd1f58398a7dbba4a3fffa9e2a151_a432cd1f58398a7dbba4a3fffa9e2a151} 
+\+\#define CAN\+\_\+\+RX~GPIO\+\_\+\+PIN\+\_\+8}
+
+\Hypertarget{main_8cpp_a2e2a30d5cdfd6401500776811d46cc0a_a2e2a30d5cdfd6401500776811d46cc0a}\index{main.cpp@{main.cpp}!CAN\_TX@{CAN\_TX}}
+\index{CAN\_TX@{CAN\_TX}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CAN\_TX}{CAN\_TX}}
+{\footnotesize\ttfamily \label{main_8cpp_a2e2a30d5cdfd6401500776811d46cc0a_a2e2a30d5cdfd6401500776811d46cc0a} 
+\+\#define CAN\+\_\+\+TX~GPIO\+\_\+\+PIN9}
+
+\Hypertarget{main_8cpp_ace8b86ebbbf10f6c2bee718447fde136_ace8b86ebbbf10f6c2bee718447fde136}\index{main.cpp@{main.cpp}!DIFFBEST\_ID@{DIFFBEST\_ID}}
+\index{DIFFBEST\_ID@{DIFFBEST\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DIFFBEST\_ID}{DIFFBEST\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ace8b86ebbbf10f6c2bee718447fde136_ace8b86ebbbf10f6c2bee718447fde136} 
+\+\#define DIFFBEST\+\_\+\+ID~0x778}
+
+\Hypertarget{main_8cpp_ac9fd4daf777ed2e76998ddd2d3884e5b_ac9fd4daf777ed2e76998ddd2d3884e5b}\index{main.cpp@{main.cpp}!ECT\_ID@{ECT\_ID}}
+\index{ECT\_ID@{ECT\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ECT\_ID}{ECT\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ac9fd4daf777ed2e76998ddd2d3884e5b_ac9fd4daf777ed2e76998ddd2d3884e5b} 
+\+\#define ECT\+\_\+\+ID~0x605}
+
+\Hypertarget{main_8cpp_a3c42461e1426d98e3380507b8a91265d_a3c42461e1426d98e3380507b8a91265d}\index{main.cpp@{main.cpp}!EOP\_ID@{EOP\_ID}}
+\index{EOP\_ID@{EOP\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{EOP\_ID}{EOP\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a3c42461e1426d98e3380507b8a91265d_a3c42461e1426d98e3380507b8a91265d} 
+\+\#define EOP\+\_\+\+ID~0x608}
+
+\Hypertarget{main_8cpp_a8facfc52f8d12ba515600501358d19f4_a8facfc52f8d12ba515600501358d19f4}\index{main.cpp@{main.cpp}!G\_ID@{G\_ID}}
+\index{G\_ID@{G\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{G\_ID}{G\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a8facfc52f8d12ba515600501358d19f4_a8facfc52f8d12ba515600501358d19f4} 
+\+\#define G\+\_\+\+ID~0x580}
+
+\Hypertarget{main_8cpp_adae205cb32a01091ddcd99fb093a2203_adae205cb32a01091ddcd99fb093a2203}\index{main.cpp@{main.cpp}!GEAR\_ID@{GEAR\_ID}}
+\index{GEAR\_ID@{GEAR\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_ID}{GEAR\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_adae205cb32a01091ddcd99fb093a2203_adae205cb32a01091ddcd99fb093a2203} 
+\+\#define GEAR\+\_\+\+ID~0x60E}
+
+\Hypertarget{main_8cpp_aec65b3c935696d689aa70bfdf532ed1d_aec65b3c935696d689aa70bfdf532ed1d}\index{main.cpp@{main.cpp}!GEAR\_LE@{GEAR\_LE}}
+\index{GEAR\_LE@{GEAR\_LE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_LE}{GEAR\_LE}}
+{\footnotesize\ttfamily \label{main_8cpp_aec65b3c935696d689aa70bfdf532ed1d_aec65b3c935696d689aa70bfdf532ed1d} 
+\+\#define GEAR\+\_\+\+LE~GPIO\+\_\+\+PIN\+\_\+14}
+
+\Hypertarget{main_8cpp_a1ed7f136f83336798b35bb936625471a_a1ed7f136f83336798b35bb936625471a}\index{main.cpp@{main.cpp}!GEAR\_MOSI@{GEAR\_MOSI}}
+\index{GEAR\_MOSI@{GEAR\_MOSI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_MOSI}{GEAR\_MOSI}}
+{\footnotesize\ttfamily \label{main_8cpp_a1ed7f136f83336798b35bb936625471a_a1ed7f136f83336798b35bb936625471a} 
+\+\#define GEAR\+\_\+\+MOSI~GPIO\+\_\+\+PIN\+\_\+15}
+
+\Hypertarget{main_8cpp_a16c7dd58a3f2a9f7f275cdb8e9430dd9_a16c7dd58a3f2a9f7f275cdb8e9430dd9}\index{main.cpp@{main.cpp}!GEAR\_OE@{GEAR\_OE}}
+\index{GEAR\_OE@{GEAR\_OE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_OE}{GEAR\_OE}}
+{\footnotesize\ttfamily \label{main_8cpp_a16c7dd58a3f2a9f7f275cdb8e9430dd9_a16c7dd58a3f2a9f7f275cdb8e9430dd9} 
+\+\#define GEAR\+\_\+\+OE~GPIO\+\_\+\+PIN\+\_\+11}
+
+\Hypertarget{main_8cpp_a93289da04e9ce586ca0c836e45abc042_a93289da04e9ce586ca0c836e45abc042}\index{main.cpp@{main.cpp}!GEAR\_REG@{GEAR\_REG}}
+\index{GEAR\_REG@{GEAR\_REG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_REG}{GEAR\_REG}}
+{\footnotesize\ttfamily \label{main_8cpp_a93289da04e9ce586ca0c836e45abc042_a93289da04e9ce586ca0c836e45abc042} 
+\+\#define GEAR\+\_\+\+REG~GPIOB}
+
+\Hypertarget{main_8cpp_a8eb6154c4a9c70e90c7fb84ba02ffede_a8eb6154c4a9c70e90c7fb84ba02ffede}\index{main.cpp@{main.cpp}!GEAR\_REG\_OE@{GEAR\_REG\_OE}}
+\index{GEAR\_REG\_OE@{GEAR\_REG\_OE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_REG\_OE}{GEAR\_REG\_OE}}
+{\footnotesize\ttfamily \label{main_8cpp_a8eb6154c4a9c70e90c7fb84ba02ffede_a8eb6154c4a9c70e90c7fb84ba02ffede} 
+\+\#define GEAR\+\_\+\+REG\+\_\+\+OE~GPIOA}
+
+\Hypertarget{main_8cpp_af8a1786cca0a837024845c6b65b60bd8_af8a1786cca0a837024845c6b65b60bd8}\index{main.cpp@{main.cpp}!GEAR\_SCK@{GEAR\_SCK}}
+\index{GEAR\_SCK@{GEAR\_SCK}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GEAR\_SCK}{GEAR\_SCK}}
+{\footnotesize\ttfamily \label{main_8cpp_af8a1786cca0a837024845c6b65b60bd8_af8a1786cca0a837024845c6b65b60bd8} 
+\+\#define GEAR\+\_\+\+SCK~GPIO\+\_\+\+PIN\+\_\+13}
+
+\Hypertarget{main_8cpp_a5094932411c4f4c72fe40914cd26beb6_a5094932411c4f4c72fe40914cd26beb6}\index{main.cpp@{main.cpp}!LAMBDA\_ID@{LAMBDA\_ID}}
+\index{LAMBDA\_ID@{LAMBDA\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LAMBDA\_ID}{LAMBDA\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a5094932411c4f4c72fe40914cd26beb6_a5094932411c4f4c72fe40914cd26beb6} 
+\+\#define LAMBDA\+\_\+\+ID~0x602}
+
+\Hypertarget{main_8cpp_aaa8e4f8b2064cefa510e9be42519c348_aaa8e4f8b2064cefa510e9be42519c348}\index{main.cpp@{main.cpp}!LAPTIME\_ID@{LAPTIME\_ID}}
+\index{LAPTIME\_ID@{LAPTIME\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LAPTIME\_ID}{LAPTIME\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_aaa8e4f8b2064cefa510e9be42519c348_aaa8e4f8b2064cefa510e9be42519c348} 
+\+\#define LAPTIME\+\_\+\+ID~0x777}
+
+\Hypertarget{main_8cpp_ad0d0bdd5242aaa7aa76f00d47799d0ae_ad0d0bdd5242aaa7aa76f00d47799d0ae}\index{main.cpp@{main.cpp}!LED\_MASK@{LED\_MASK}}
+\index{LED\_MASK@{LED\_MASK}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LED\_MASK}{LED\_MASK}}
+{\footnotesize\ttfamily \label{main_8cpp_ad0d0bdd5242aaa7aa76f00d47799d0ae_ad0d0bdd5242aaa7aa76f00d47799d0ae} 
+\+\#define LED\+\_\+\+MASK~0x\+FFFF}
+
+\Hypertarget{main_8cpp_ae2070bde5b3331e93ee388bdcf047073_ae2070bde5b3331e93ee388bdcf047073}\index{main.cpp@{main.cpp}!LIMP\_ID@{LIMP\_ID}}
+\index{LIMP\_ID@{LIMP\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LIMP\_ID}{LIMP\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ae2070bde5b3331e93ee388bdcf047073_ae2070bde5b3331e93ee388bdcf047073} 
+\+\#define LIMP\+\_\+\+ID~0x61E}
+
+\Hypertarget{main_8cpp_ae376a3b49deb3e94552b1e8e72a8a703_ae376a3b49deb3e94552b1e8e72a8a703}\index{main.cpp@{main.cpp}!OILTEMP\_ID@{OILTEMP\_ID}}
+\index{OILTEMP\_ID@{OILTEMP\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{OILTEMP\_ID}{OILTEMP\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ae376a3b49deb3e94552b1e8e72a8a703_ae376a3b49deb3e94552b1e8e72a8a703} 
+\+\#define OILTEMP\+\_\+\+ID~0x604}
+
+\Hypertarget{main_8cpp_a95d2438b8b3665998ef9429c47b6eed8_a95d2438b8b3665998ef9429c47b6eed8}\index{main.cpp@{main.cpp}!ONE\_LED@{ONE\_LED}}
+\index{ONE\_LED@{ONE\_LED}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ONE\_LED}{ONE\_LED}}
+{\footnotesize\ttfamily \label{main_8cpp_a95d2438b8b3665998ef9429c47b6eed8_a95d2438b8b3665998ef9429c47b6eed8} 
+\+\#define ONE\+\_\+\+LED~\doxymbox{\hyperlink{main_8cpp_a03f0cc69336f88fcd5943808f19bab28_a03f0cc69336f88fcd5943808f19bab28}{RPM\+\_\+\+MAX}} /\+ 30}
+
+\Hypertarget{main_8cpp_a0901b00b7fda0e5daa43766d1df38593_a0901b00b7fda0e5daa43766d1df38593}\index{main.cpp@{main.cpp}!REV\_LIM@{REV\_LIM}}
+\index{REV\_LIM@{REV\_LIM}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{REV\_LIM}{REV\_LIM}}
+{\footnotesize\ttfamily \label{main_8cpp_a0901b00b7fda0e5daa43766d1df38593_a0901b00b7fda0e5daa43766d1df38593} 
+\+\#define REV\+\_\+\+LIM~GPIO\+\_\+\+PIN\+\_\+12}
+
+\Hypertarget{main_8cpp_a0ee65dbd36d7f34dfccc8e382ecf859d_a0ee65dbd36d7f34dfccc8e382ecf859d}\index{main.cpp@{main.cpp}!ROLLTIME\_ID@{ROLLTIME\_ID}}
+\index{ROLLTIME\_ID@{ROLLTIME\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ROLLTIME\_ID}{ROLLTIME\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ee65dbd36d7f34dfccc8e382ecf859d_a0ee65dbd36d7f34dfccc8e382ecf859d} 
+\+\#define ROLLTIME\+\_\+\+ID~0x780}
+
+\Hypertarget{main_8cpp_aa6b9fda5a62927cb4b03351e2fb5d112_aa6b9fda5a62927cb4b03351e2fb5d112}\index{main.cpp@{main.cpp}!RPM\_ID@{RPM\_ID}}
+\index{RPM\_ID@{RPM\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_ID}{RPM\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_aa6b9fda5a62927cb4b03351e2fb5d112_aa6b9fda5a62927cb4b03351e2fb5d112} 
+\+\#define RPM\+\_\+\+ID~0x600}
+
+\Hypertarget{main_8cpp_af9b157017736a977b461a5c6d12f60b9_af9b157017736a977b461a5c6d12f60b9}\index{main.cpp@{main.cpp}!RPM\_LE@{RPM\_LE}}
+\index{RPM\_LE@{RPM\_LE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_LE}{RPM\_LE}}
+{\footnotesize\ttfamily \label{main_8cpp_af9b157017736a977b461a5c6d12f60b9_af9b157017736a977b461a5c6d12f60b9} 
+\+\#define RPM\+\_\+\+LE~GPIO\+\_\+\+PIN\+\_\+4}
+
+\Hypertarget{main_8cpp_a03f0cc69336f88fcd5943808f19bab28_a03f0cc69336f88fcd5943808f19bab28}\index{main.cpp@{main.cpp}!RPM\_MAX@{RPM\_MAX}}
+\index{RPM\_MAX@{RPM\_MAX}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_MAX}{RPM\_MAX}}
+{\footnotesize\ttfamily \label{main_8cpp_a03f0cc69336f88fcd5943808f19bab28_a03f0cc69336f88fcd5943808f19bab28} 
+\+\#define RPM\+\_\+\+MAX~14000}
+
+\Hypertarget{main_8cpp_a916c638cffcab1620ff78bb43be47ff4_a916c638cffcab1620ff78bb43be47ff4}\index{main.cpp@{main.cpp}!RPM\_MOSI@{RPM\_MOSI}}
+\index{RPM\_MOSI@{RPM\_MOSI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_MOSI}{RPM\_MOSI}}
+{\footnotesize\ttfamily \label{main_8cpp_a916c638cffcab1620ff78bb43be47ff4_a916c638cffcab1620ff78bb43be47ff4} 
+\+\#define RPM\+\_\+\+MOSI~GPIO\+\_\+\+PIN\+\_\+7}
+
+\Hypertarget{main_8cpp_a15d8ab1447d66ece0ae489184e827acc_a15d8ab1447d66ece0ae489184e827acc}\index{main.cpp@{main.cpp}!RPM\_OE@{RPM\_OE}}
+\index{RPM\_OE@{RPM\_OE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_OE}{RPM\_OE}}
+{\footnotesize\ttfamily \label{main_8cpp_a15d8ab1447d66ece0ae489184e827acc_a15d8ab1447d66ece0ae489184e827acc} 
+\+\#define RPM\+\_\+\+OE~GPIO\+\_\+\+PIN\+\_\+8}
+
+\Hypertarget{main_8cpp_a4e1c6ea41691574754a85843373594b1_a4e1c6ea41691574754a85843373594b1}\index{main.cpp@{main.cpp}!RPM\_REG@{RPM\_REG}}
+\index{RPM\_REG@{RPM\_REG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_REG}{RPM\_REG}}
+{\footnotesize\ttfamily \label{main_8cpp_a4e1c6ea41691574754a85843373594b1_a4e1c6ea41691574754a85843373594b1} 
+\+\#define RPM\+\_\+\+REG~GPIOA}
+
+
+
+RPM shift register stuff. 
+
+\Hypertarget{main_8cpp_af944007d309383b270caddab4bff7e27_af944007d309383b270caddab4bff7e27}\index{main.cpp@{main.cpp}!RPM\_SCK@{RPM\_SCK}}
+\index{RPM\_SCK@{RPM\_SCK}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM\_SCK}{RPM\_SCK}}
+{\footnotesize\ttfamily \label{main_8cpp_af944007d309383b270caddab4bff7e27_af944007d309383b270caddab4bff7e27} 
+\+\#define RPM\+\_\+\+SCK~GPIO\+\_\+\+PIN\+\_\+5}
+
+\Hypertarget{main_8cpp_aa8d698d8a2c8cd96e79096909bc26647_aa8d698d8a2c8cd96e79096909bc26647}\index{main.cpp@{main.cpp}!SCREEN\_REG@{SCREEN\_REG}}
+\index{SCREEN\_REG@{SCREEN\_REG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_REG}{SCREEN\_REG}}
+{\footnotesize\ttfamily \label{main_8cpp_aa8d698d8a2c8cd96e79096909bc26647_aa8d698d8a2c8cd96e79096909bc26647} 
+\+\#define SCREEN\+\_\+\+REG~GPIOB}
+
+\Hypertarget{main_8cpp_af876208e76cdfd5cd2b38a81ede1e2de_af876208e76cdfd5cd2b38a81ede1e2de}\index{main.cpp@{main.cpp}!SCREEN\_SCL@{SCREEN\_SCL}}
+\index{SCREEN\_SCL@{SCREEN\_SCL}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_SCL}{SCREEN\_SCL}}
+{\footnotesize\ttfamily \label{main_8cpp_af876208e76cdfd5cd2b38a81ede1e2de_af876208e76cdfd5cd2b38a81ede1e2de} 
+\+\#define SCREEN\+\_\+\+SCL~GPIO\+\_\+\+PIN\+\_\+6}
+
+\Hypertarget{main_8cpp_ab10834549c612120a38bbe7ce4f57bdc_ab10834549c612120a38bbe7ce4f57bdc}\index{main.cpp@{main.cpp}!SCREEN\_SDA@{SCREEN\_SDA}}
+\index{SCREEN\_SDA@{SCREEN\_SDA}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_SDA}{SCREEN\_SDA}}
+{\footnotesize\ttfamily \label{main_8cpp_ab10834549c612120a38bbe7ce4f57bdc_ab10834549c612120a38bbe7ce4f57bdc} 
+\+\#define SCREEN\+\_\+\+SDA~GPIO\+\_\+\+PIN7}
+
+\Hypertarget{main_8cpp_acc41d32fbddc2ea8996a60cc348545ad_acc41d32fbddc2ea8996a60cc348545ad}\index{main.cpp@{main.cpp}!SCROLL\_PINA@{SCROLL\_PINA}}
+\index{SCROLL\_PINA@{SCROLL\_PINA}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCROLL\_PINA}{SCROLL\_PINA}}
+{\footnotesize\ttfamily \label{main_8cpp_acc41d32fbddc2ea8996a60cc348545ad_acc41d32fbddc2ea8996a60cc348545ad} 
+\+\#define SCROLL\+\_\+\+PINA~GPIO\+\_\+\+PIN\+\_\+3}
+
+\Hypertarget{main_8cpp_a9417e09683517b8bb7b79674635cb6a8_a9417e09683517b8bb7b79674635cb6a8}\index{main.cpp@{main.cpp}!SCROLL\_PINB@{SCROLL\_PINB}}
+\index{SCROLL\_PINB@{SCROLL\_PINB}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCROLL\_PINB}{SCROLL\_PINB}}
+{\footnotesize\ttfamily \label{main_8cpp_a9417e09683517b8bb7b79674635cb6a8_a9417e09683517b8bb7b79674635cb6a8} 
+\+\#define SCROLL\+\_\+\+PINB~GPIO\+\_\+\+PIN\+\_\+2}
+
+\Hypertarget{main_8cpp_afb20c0ba86704f06e1281b9456ac31e4_afb20c0ba86704f06e1281b9456ac31e4}\index{main.cpp@{main.cpp}!SCROLL\_REG@{SCROLL\_REG}}
+\index{SCROLL\_REG@{SCROLL\_REG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCROLL\_REG}{SCROLL\_REG}}
+{\footnotesize\ttfamily \label{main_8cpp_afb20c0ba86704f06e1281b9456ac31e4_afb20c0ba86704f06e1281b9456ac31e4} 
+\+\#define SCROLL\+\_\+\+REG~GPIOA}
+
+\Hypertarget{main_8cpp_ac20dc2cff166c6419cef2c6741f36556_ac20dc2cff166c6419cef2c6741f36556}\index{main.cpp@{main.cpp}!SESSTIME\_ID@{SESSTIME\_ID}}
+\index{SESSTIME\_ID@{SESSTIME\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SESSTIME\_ID}{SESSTIME\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ac20dc2cff166c6419cef2c6741f36556_ac20dc2cff166c6419cef2c6741f36556} 
+\+\#define SESSTIME\+\_\+\+ID~0x780}
+
+\Hypertarget{main_8cpp_aedaa69675854497ff1190a26a53fde10_aedaa69675854497ff1190a26a53fde10}\index{main.cpp@{main.cpp}!SPEED\_ID@{SPEED\_ID}}
+\index{SPEED\_ID@{SPEED\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SPEED\_ID}{SPEED\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_aedaa69675854497ff1190a26a53fde10_aedaa69675854497ff1190a26a53fde10} 
+\+\#define SPEED\+\_\+\+ID~0x779}
+
+\Hypertarget{main_8cpp_ae1f85f9e7b5fdfea8b48f268556ca617_ae1f85f9e7b5fdfea8b48f268556ca617}\index{main.cpp@{main.cpp}!TPS\_ID@{TPS\_ID}}
+\index{TPS\_ID@{TPS\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TPS\_ID}{TPS\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_ae1f85f9e7b5fdfea8b48f268556ca617_ae1f85f9e7b5fdfea8b48f268556ca617} 
+\+\#define TPS\+\_\+\+ID~0x61B}
+
+\Hypertarget{main_8cpp_a5e0abd712518f4256f34430053b24c41_a5e0abd712518f4256f34430053b24c41}\index{main.cpp@{main.cpp}!VBAT\_ID@{VBAT\_ID}}
+\index{VBAT\_ID@{VBAT\_ID}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{VBAT\_ID}{VBAT\_ID}}
+{\footnotesize\ttfamily \label{main_8cpp_a5e0abd712518f4256f34430053b24c41_a5e0abd712518f4256f34430053b24c41} 
+\+\#define VBAT\+\_\+\+ID~0x60C}
+
+\Hypertarget{main_8cpp_a7b3889ae8609823370e500e44ebe8a5d_a7b3889ae8609823370e500e44ebe8a5d}\index{main.cpp@{main.cpp}!WARN\_1@{WARN\_1}}
+\index{WARN\_1@{WARN\_1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WARN\_1}{WARN\_1}}
+{\footnotesize\ttfamily \label{main_8cpp_a7b3889ae8609823370e500e44ebe8a5d_a7b3889ae8609823370e500e44ebe8a5d} 
+\+\#define WARN\+\_\+1~GPIO\+\_\+\+PIN\+\_\+10}
+
+\Hypertarget{main_8cpp_a514ac2ed83b380af080e01e88ce8b869_a514ac2ed83b380af080e01e88ce8b869}\index{main.cpp@{main.cpp}!WARN\_2@{WARN\_2}}
+\index{WARN\_2@{WARN\_2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WARN\_2}{WARN\_2}}
+{\footnotesize\ttfamily \label{main_8cpp_a514ac2ed83b380af080e01e88ce8b869_a514ac2ed83b380af080e01e88ce8b869} 
+\+\#define WARN\+\_\+2~GPIO\+\_\+\+PIN\+\_\+11}
+
+\Hypertarget{main_8cpp_a24e2ee44da9e389e383c68daca6c6fbb_a24e2ee44da9e389e383c68daca6c6fbb}\index{main.cpp@{main.cpp}!WARN\_REG@{WARN\_REG}}
+\index{WARN\_REG@{WARN\_REG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WARN\_REG}{WARN\_REG}}
+{\footnotesize\ttfamily \label{main_8cpp_a24e2ee44da9e389e383c68daca6c6fbb_a24e2ee44da9e389e383c68daca6c6fbb} 
+\+\#define WARN\+\_\+\+REG~GPIOB}
+
+
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a23a74557e59a4a94c58de82ba021afdd_a23a74557e59a4a94c58de82ba021afdd}\index{main.cpp@{main.cpp}!bestTime@{bestTime}}
+\index{bestTime@{bestTime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{bestTime()}{bestTime()}}
+{\footnotesize\ttfamily \label{main_8cpp_a23a74557e59a4a94c58de82ba021afdd_a23a74557e59a4a94c58de82ba021afdd} 
+Rx\+\_\+\+Type\+Def best\+Time (\begin{DoxyParamCaption}\item[{0x778}]{}{, }\item[{TIME}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a24721c08b9d1d6a8d6de70bce6a64b71_a24721c08b9d1d6a8d6de70bce6a64b71}\index{main.cpp@{main.cpp}!brakeBias@{brakeBias}}
+\index{brakeBias@{brakeBias}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{brakeBias()}{brakeBias()}}
+{\footnotesize\ttfamily \label{main_8cpp_a24721c08b9d1d6a8d6de70bce6a64b71_a24721c08b9d1d6a8d6de70bce6a64b71} 
+Rx\+\_\+\+Type\+Def brake\+Bias (\begin{DoxyParamCaption}\item[{0x779}]{}{, }\item[{FLOAT}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_af9b6dbe36c0f4dd2fe281716380cd7de_af9b6dbe36c0f4dd2fe281716380cd7de}\index{main.cpp@{main.cpp}!diffBest@{diffBest}}
+\index{diffBest@{diffBest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{diffBest()}{diffBest()}}
+{\footnotesize\ttfamily \label{main_8cpp_af9b6dbe36c0f4dd2fe281716380cd7de_af9b6dbe36c0f4dd2fe281716380cd7de} 
+Rx\+\_\+\+Type\+Def diff\+Best (\begin{DoxyParamCaption}\item[{0x778}]{}{, }\item[{TIME}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a6e61683d3ff140d5dc9d4a6376c71953_a6e61683d3ff140d5dc9d4a6376c71953}\index{main.cpp@{main.cpp}!ECT@{ECT}}
+\index{ECT@{ECT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ECT()}{ECT()}}
+{\footnotesize\ttfamily \label{main_8cpp_a6e61683d3ff140d5dc9d4a6376c71953_a6e61683d3ff140d5dc9d4a6376c71953} 
+Rx\+\_\+\+Type\+Def ECT (\begin{DoxyParamCaption}\item[{0x605}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}ECT:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a85d1784a323fb0add2d3fefa4906d711_a85d1784a323fb0add2d3fefa4906d711}\index{main.cpp@{main.cpp}!EOP@{EOP}}
+\index{EOP@{EOP}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{EOP()}{EOP()}}
+{\footnotesize\ttfamily \label{main_8cpp_a85d1784a323fb0add2d3fefa4906d711_a85d1784a323fb0add2d3fefa4906d711} 
+Rx\+\_\+\+Type\+Def EOP (\begin{DoxyParamCaption}\item[{0x608}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Oil Pressure:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9}\index{main.cpp@{main.cpp}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9} 
+void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a2d110aaeb4bc8efe6cd58cbf454c4017_a2d110aaeb4bc8efe6cd58cbf454c4017}\index{main.cpp@{main.cpp}!fBrakeP@{fBrakeP}}
+\index{fBrakeP@{fBrakeP}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fBrakeP()}{fBrakeP()}}
+{\footnotesize\ttfamily \label{main_8cpp_a2d110aaeb4bc8efe6cd58cbf454c4017_a2d110aaeb4bc8efe6cd58cbf454c4017} 
+Rx\+\_\+\+Type\+Def f\+BrakeP (\begin{DoxyParamCaption}\item[{0x580}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Front P:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_ae931cfb7d0660fceb65dcb2ab32ac727_ae931cfb7d0660fceb65dcb2ab32ac727}\index{main.cpp@{main.cpp}!forwardG@{forwardG}}
+\index{forwardG@{forwardG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{forwardG()}{forwardG()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae931cfb7d0660fceb65dcb2ab32ac727_ae931cfb7d0660fceb65dcb2ab32ac727} 
+Rx\+\_\+\+Type\+Def forwardG (\begin{DoxyParamCaption}\item[{0x581}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Forward G:\+ \%0.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a47bc313f4e0ddb9de8daa9be4eb96233_a47bc313f4e0ddb9de8daa9be4eb96233}\index{main.cpp@{main.cpp}!gear@{gear}}
+\index{gear@{gear}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gear()}{gear()}}
+{\footnotesize\ttfamily \label{main_8cpp_a47bc313f4e0ddb9de8daa9be4eb96233_a47bc313f4e0ddb9de8daa9be4eb96233} 
+Rx\+\_\+\+Type\+Def gear (\begin{DoxyParamCaption}\item[{0x60E}]{}{, }\item[{INT}]{}{, }\item[{"{}"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a8d2e1ff5f0d9737e9d7e68efa8ebb49c_a8d2e1ff5f0d9737e9d7e68efa8ebb49c}\index{main.cpp@{main.cpp}!gearLEDs@{gearLEDs}}
+\index{gearLEDs@{gearLEDs}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gearLEDs()}{gearLEDs()}}
+{\footnotesize\ttfamily \label{main_8cpp_a8d2e1ff5f0d9737e9d7e68efa8ebb49c_a8d2e1ff5f0d9737e9d7e68efa8ebb49c} 
+void gear\+LEDs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ledseq}{}\end{DoxyParamCaption})}
+
+
+
+Sets gear LEDs to uint16\+\_\+t pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint16\+\_\+t} & ledseq \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a7368d39e78009c017d6f81ccf33b9b2c_a7368d39e78009c017d6f81ccf33b9b2c}\index{main.cpp@{main.cpp}!HAL\_CAN\_RxFifo0MsgPendingCallback@{HAL\_CAN\_RxFifo0MsgPendingCallback}}
+\index{HAL\_CAN\_RxFifo0MsgPendingCallback@{HAL\_CAN\_RxFifo0MsgPendingCallback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{HAL\_CAN\_RxFifo0MsgPendingCallback()}{HAL\_CAN\_RxFifo0MsgPendingCallback()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7368d39e78009c017d6f81ccf33b9b2c_a7368d39e78009c017d6f81ccf33b9b2c} 
+void HAL\+\_\+\+CAN\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback (\begin{DoxyParamCaption}\item[{CAN\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{hcan}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a190d3285afabce00bc9e79bfe7fda3c7_a190d3285afabce00bc9e79bfe7fda3c7}\index{main.cpp@{main.cpp}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily \label{main_8cpp_a190d3285afabce00bc9e79bfe7fda3c7_a190d3285afabce00bc9e79bfe7fda3c7} 
+void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+pin}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a3d3d5fa8f2640efe2d1a3eb5ba1d798c_a3d3d5fa8f2640efe2d1a3eb5ba1d798c}\index{main.cpp@{main.cpp}!lambda@{lambda}}
+\index{lambda@{lambda}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lambda()}{lambda()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3d3d5fa8f2640efe2d1a3eb5ba1d798c_a3d3d5fa8f2640efe2d1a3eb5ba1d798c} 
+Rx\+\_\+\+Type\+Def lambda (\begin{DoxyParamCaption}\item[{0x602}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Lambda:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a3618831445f51210298d88fd7986355c_a3618831445f51210298d88fd7986355c}\index{main.cpp@{main.cpp}!lapnum@{lapnum}}
+\index{lapnum@{lapnum}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lapnum()}{lapnum()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3618831445f51210298d88fd7986355c_a3618831445f51210298d88fd7986355c} 
+Rx\+\_\+\+Type\+Def lapnum (\begin{DoxyParamCaption}\item[{0x777}]{}{, }\item[{INT}]{}{, }\item[{"{}Lap\+\#:\+ \%d"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_aef5d0d0e87548908ddf22c41681722f6_aef5d0d0e87548908ddf22c41681722f6}\index{main.cpp@{main.cpp}!laptime@{laptime}}
+\index{laptime@{laptime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{laptime()}{laptime()}}
+{\footnotesize\ttfamily \label{main_8cpp_aef5d0d0e87548908ddf22c41681722f6_aef5d0d0e87548908ddf22c41681722f6} 
+Rx\+\_\+\+Type\+Def laptime (\begin{DoxyParamCaption}\item[{0x777}]{}{, }\item[{TIME}]{}{, }\item[{"{}Time:\+ \%s"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_af5075742f6002d04bc90d45c8951fd4e_af5075742f6002d04bc90d45c8951fd4e}\index{main.cpp@{main.cpp}!latG@{latG}}
+\index{latG@{latG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{latG()}{latG()}}
+{\footnotesize\ttfamily \label{main_8cpp_af5075742f6002d04bc90d45c8951fd4e_af5075742f6002d04bc90d45c8951fd4e} 
+Rx\+\_\+\+Type\+Def latG (\begin{DoxyParamCaption}\item[{0x581}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Lat G:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a2409acb6029fd30d5aa1f71e8f9fcda4_a2409acb6029fd30d5aa1f71e8f9fcda4}\index{main.cpp@{main.cpp}!LED\_off@{LED\_off}}
+\index{LED\_off@{LED\_off}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LED\_off()}{LED\_off()}}
+{\footnotesize\ttfamily \label{main_8cpp_a2409acb6029fd30d5aa1f71e8f9fcda4_a2409acb6029fd30d5aa1f71e8f9fcda4} 
+void LED\+\_\+off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+turns all shift reg LEDs off 
+
+\Hypertarget{main_8cpp_a7d66b579f821d2020efe09909576f6d1_a7d66b579f821d2020efe09909576f6d1}\index{main.cpp@{main.cpp}!LED\_on@{LED\_on}}
+\index{LED\_on@{LED\_on}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LED\_on()}{LED\_on()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7d66b579f821d2020efe09909576f6d1_a7d66b579f821d2020efe09909576f6d1} 
+void LED\+\_\+on (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enables shift register LEDs. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_ae4486a0567ecf3d65834bbbc53953f6f_ae4486a0567ecf3d65834bbbc53953f6f}\index{main.cpp@{main.cpp}!limpMode@{limpMode}}
+\index{limpMode@{limpMode}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{limpMode()}{limpMode()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae4486a0567ecf3d65834bbbc53953f6f_ae4486a0567ecf3d65834bbbc53953f6f} 
+Rx\+\_\+\+Type\+Def limp\+Mode (\begin{DoxyParamCaption}\item[{0x61E}]{}{, }\item[{INT}]{}{, }\item[{"{}Limp:\+ \%d"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe_a840291bc02cba5474a4cb46a9b9566fe}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a0f1dd94da70ff01c04d9aa1bcbbe4eee_a0f1dd94da70ff01c04d9aa1bcbbe4eee}\index{main.cpp@{main.cpp}!MX\_CAN\_Init@{MX\_CAN\_Init}}
+\index{MX\_CAN\_Init@{MX\_CAN\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_CAN\_Init()}{MX\_CAN\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0f1dd94da70ff01c04d9aa1bcbbe4eee_a0f1dd94da70ff01c04d9aa1bcbbe4eee} 
+void MX\+\_\+\+CAN\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+CAN Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_ae89fdd15729ad41a66911190fcbab23a_ae89fdd15729ad41a66911190fcbab23a}\index{main.cpp@{main.cpp}!MX\_GPIO\_Init@{MX\_GPIO\_Init}}
+\index{MX\_GPIO\_Init@{MX\_GPIO\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_GPIO\_Init()}{MX\_GPIO\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae89fdd15729ad41a66911190fcbab23a_ae89fdd15729ad41a66911190fcbab23a} 
+void MX\+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+GPIO Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a4230d11f81d0b16e112f1cc3f40cb42f_a4230d11f81d0b16e112f1cc3f40cb42f}\index{main.cpp@{main.cpp}!MX\_I2C1\_Init@{MX\_I2C1\_Init}}
+\index{MX\_I2C1\_Init@{MX\_I2C1\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_I2C1\_Init()}{MX\_I2C1\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4230d11f81d0b16e112f1cc3f40cb42f_a4230d11f81d0b16e112f1cc3f40cb42f} 
+void MX\+\_\+\+I2\+C1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2\+C1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a28dbf2494083ac5f39daa87bf09e4eb3_a28dbf2494083ac5f39daa87bf09e4eb3}\index{main.cpp@{main.cpp}!MX\_SPI1\_Init@{MX\_SPI1\_Init}}
+\index{MX\_SPI1\_Init@{MX\_SPI1\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_SPI1\_Init()}{MX\_SPI1\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a28dbf2494083ac5f39daa87bf09e4eb3_a28dbf2494083ac5f39daa87bf09e4eb3} 
+void MX\+\_\+\+SPI1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+SPI1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_ade0c8abfcfc1615647bfdd244bd1ee00_ade0c8abfcfc1615647bfdd244bd1ee00}\index{main.cpp@{main.cpp}!MX\_SPI2\_Init@{MX\_SPI2\_Init}}
+\index{MX\_SPI2\_Init@{MX\_SPI2\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_SPI2\_Init()}{MX\_SPI2\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_ade0c8abfcfc1615647bfdd244bd1ee00_ade0c8abfcfc1615647bfdd244bd1ee00} 
+void MX\+\_\+\+SPI2\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+SPI2 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a1d1beb7da60021ee1adbca294f28ba88_a1d1beb7da60021ee1adbca294f28ba88}\index{main.cpp@{main.cpp}!MX\_TIM1\_Init@{MX\_TIM1\_Init}}
+\index{MX\_TIM1\_Init@{MX\_TIM1\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_TIM1\_Init()}{MX\_TIM1\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1d1beb7da60021ee1adbca294f28ba88_a1d1beb7da60021ee1adbca294f28ba88} 
+void MX\+\_\+\+TIM1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+TIM1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a73ff2ff527606fb2be261e9f85aab83c_a73ff2ff527606fb2be261e9f85aab83c}\index{main.cpp@{main.cpp}!MX\_TIM3\_Init@{MX\_TIM3\_Init}}
+\index{MX\_TIM3\_Init@{MX\_TIM3\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_TIM3\_Init()}{MX\_TIM3\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a73ff2ff527606fb2be261e9f85aab83c_a73ff2ff527606fb2be261e9f85aab83c} 
+void MX\+\_\+\+TIM3\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+TIM3 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a62f4b77e20bccafe98a183771749c20c_a62f4b77e20bccafe98a183771749c20c}\index{main.cpp@{main.cpp}!MX\_USART1\_UART\_Init@{MX\_USART1\_UART\_Init}}
+\index{MX\_USART1\_UART\_Init@{MX\_USART1\_UART\_Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MX\_USART1\_UART\_Init()}{MX\_USART1\_UART\_Init()}}
+{\footnotesize\ttfamily \label{main_8cpp_a62f4b77e20bccafe98a183771749c20c_a62f4b77e20bccafe98a183771749c20c} 
+void MX\+\_\+\+USART1\+\_\+\+UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+USART1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_afa9b15921609ce871558f07a45a702e6_afa9b15921609ce871558f07a45a702e6}\index{main.cpp@{main.cpp}!oilTemp@{oilTemp}}
+\index{oilTemp@{oilTemp}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{oilTemp()}{oilTemp()}}
+{\footnotesize\ttfamily \label{main_8cpp_afa9b15921609ce871558f07a45a702e6_afa9b15921609ce871558f07a45a702e6} 
+Rx\+\_\+\+Type\+Def oil\+Temp (\begin{DoxyParamCaption}\item[{0x604}]{}{, }\item[{FLOAT}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a3c03ae4c653c359e48368a1fde7a0c14_a3c03ae4c653c359e48368a1fde7a0c14}\index{main.cpp@{main.cpp}!rBrakeP@{rBrakeP}}
+\index{rBrakeP@{rBrakeP}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rBrakeP()}{rBrakeP()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3c03ae4c653c359e48368a1fde7a0c14_a3c03ae4c653c359e48368a1fde7a0c14} 
+Rx\+\_\+\+Type\+Def r\+BrakeP (\begin{DoxyParamCaption}\item[{0x580}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}Rear P:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46}\index{main.cpp@{main.cpp}!reverseBits@{reverseBits}}
+\index{reverseBits@{reverseBits}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{reverseBits()}{reverseBits()}}
+{\footnotesize\ttfamily \label{main_8cpp_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46} 
+uint8\+\_\+t reverse\+Bits (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{in\+\_\+bits}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a6dae61e334d29443e0b0709e641764a7_a6dae61e334d29443e0b0709e641764a7}\index{main.cpp@{main.cpp}!rollTime@{rollTime}}
+\index{rollTime@{rollTime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rollTime()}{rollTime()}}
+{\footnotesize\ttfamily \label{main_8cpp_a6dae61e334d29443e0b0709e641764a7_a6dae61e334d29443e0b0709e641764a7} 
+Rx\+\_\+\+Type\+Def roll\+Time (\begin{DoxyParamCaption}\item[{0x780}]{}{, }\item[{TIME}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_afa37193453e79c0da73b9b1605b99466_afa37193453e79c0da73b9b1605b99466}\index{main.cpp@{main.cpp}!RPM@{RPM}}
+\index{RPM@{RPM}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RPM()}{RPM()}}
+{\footnotesize\ttfamily \label{main_8cpp_afa37193453e79c0da73b9b1605b99466_afa37193453e79c0da73b9b1605b99466} 
+Rx\+\_\+\+Type\+Def RPM (\begin{DoxyParamCaption}\item[{0x600}]{}{, }\item[{INT}]{}{, }\item[{"{}RPM:\+ \%d"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_aefe4cf995520af8dfd3007988104e03f_aefe4cf995520af8dfd3007988104e03f}\index{main.cpp@{main.cpp}!rpmLEDs@{rpmLEDs}}
+\index{rpmLEDs@{rpmLEDs}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rpmLEDs()}{rpmLEDs()}}
+{\footnotesize\ttfamily \label{main_8cpp_aefe4cf995520af8dfd3007988104e03f_aefe4cf995520af8dfd3007988104e03f} 
+void rpm\+LEDs (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ledseq}{}\end{DoxyParamCaption})}
+
+
+
+Sets RPM LEDs to uint32\+\_\+t pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint32\+\_\+t} & ledseq \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a556d39c4cd770cfdfd4a156788b04bbd_a556d39c4cd770cfdfd4a156788b04bbd}\index{main.cpp@{main.cpp}!sessTime@{sessTime}}
+\index{sessTime@{sessTime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sessTime()}{sessTime()}}
+{\footnotesize\ttfamily \label{main_8cpp_a556d39c4cd770cfdfd4a156788b04bbd_a556d39c4cd770cfdfd4a156788b04bbd} 
+Rx\+\_\+\+Type\+Def sess\+Time (\begin{DoxyParamCaption}\item[{0x780}]{}{, }\item[{TIME}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a1d8b48903fa3c7fd537103ea3979b53f_a1d8b48903fa3c7fd537103ea3979b53f}\index{main.cpp@{main.cpp}!set\_hi2c@{set\_hi2c}}
+\index{set\_hi2c@{set\_hi2c}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_hi2c()}{set\_hi2c()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1d8b48903fa3c7fd537103ea3979b53f_a1d8b48903fa3c7fd537103ea3979b53f} 
+void set\+\_\+hi2c (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def}]{hi2c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8cpp_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a}\index{main.cpp@{main.cpp}!setBrightness@{setBrightness}}
+\index{setBrightness@{setBrightness}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setBrightness()}{setBrightness()}}
+{\footnotesize\ttfamily \label{main_8cpp_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a} 
+void set\+Brightness (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Set brightness amount withing range 1-\/10. 
+
+\Hypertarget{main_8cpp_a35d56bfe5226279424cc857283429440_a35d56bfe5226279424cc857283429440}\index{main.cpp@{main.cpp}!speed@{speed}}
+\index{speed@{speed}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{speed()}{speed()}}
+{\footnotesize\ttfamily \label{main_8cpp_a35d56bfe5226279424cc857283429440_a35d56bfe5226279424cc857283429440} 
+Rx\+\_\+\+Type\+Def speed (\begin{DoxyParamCaption}\item[{0x779}]{}{, }\item[{INT}]{}{, }\item[{"{}Speed:\+ \%d MPH "{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a6e83521e189864cb6a771cbdbfe6ba8c_a6e83521e189864cb6a771cbdbfe6ba8c}\index{main.cpp@{main.cpp}!startupSeq@{startupSeq}}
+\index{startupSeq@{startupSeq}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{startupSeq()}{startupSeq()}}
+{\footnotesize\ttfamily \label{main_8cpp_a6e83521e189864cb6a771cbdbfe6ba8c_a6e83521e189864cb6a771cbdbfe6ba8c} 
+void startup\+Seq (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays the startup sequence for when car turns on. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8cpp_a70af21c671abfcc773614a9a4f63d920_a70af21c671abfcc773614a9a4f63d920}\index{main.cpp@{main.cpp}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily \label{main_8cpp_a70af21c671abfcc773614a9a4f63d920_a70af21c671abfcc773614a9a4f63d920} 
+void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks\Hypertarget{main_8cpp_ad976c2c89bc95dbeb99a6f59c3ed9c71_ad976c2c89bc95dbeb99a6f59c3ed9c71}\index{main.cpp@{main.cpp}!tps@{tps}}
+\index{tps@{tps}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tps()}{tps()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad976c2c89bc95dbeb99a6f59c3ed9c71_ad976c2c89bc95dbeb99a6f59c3ed9c71} 
+Rx\+\_\+\+Type\+Def tps (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{main_8cpp_ae1f85f9e7b5fdfea8b48f268556ca617_ae1f85f9e7b5fdfea8b48f268556ca617}{TPS\+\_\+\+ID}}}]{}{, }\item[{INT}]{}{, }\item[{"{}Throttle:\+ \%d \textbackslash{}\%"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a6b03fc41f255cd40e19e96f8036406e2_a6b03fc41f255cd40e19e96f8036406e2}\index{main.cpp@{main.cpp}!vBat@{vBat}}
+\index{vBat@{vBat}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{vBat()}{vBat()}}
+{\footnotesize\ttfamily \label{main_8cpp_a6b03fc41f255cd40e19e96f8036406e2_a6b03fc41f255cd40e19e96f8036406e2} 
+Rx\+\_\+\+Type\+Def v\+Bat (\begin{DoxyParamCaption}\item[{0x60C}]{}{, }\item[{FLOAT}]{}{, }\item[{"{}v\+Bat:\+ \%.\+3f"{}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{main_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a61e9febb3f5ef718e2c27b86e563c4ed_a61e9febb3f5ef718e2c27b86e563c4ed}\index{main.cpp@{main.cpp}!back@{back}}
+\index{back@{back}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{back}{back}}
+{\footnotesize\ttfamily \label{main_8cpp_a61e9febb3f5ef718e2c27b86e563c4ed_a61e9febb3f5ef718e2c27b86e563c4ed} 
+volatile uint8\+\_\+t back = 0}
+
+\Hypertarget{main_8cpp_a05700026990108a4cbee1619771a040f_a05700026990108a4cbee1619771a040f}\index{main.cpp@{main.cpp}!brightness@{brightness}}
+\index{brightness@{brightness}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{brightness}{brightness}}
+{\footnotesize\ttfamily \label{main_8cpp_a05700026990108a4cbee1619771a040f_a05700026990108a4cbee1619771a040f} 
+float brightness = 0.\+05}
+
+\Hypertarget{main_8cpp_a7c896b42a4a6db2c6e29f2b13ae4f078_a7c896b42a4a6db2c6e29f2b13ae4f078}\index{main.cpp@{main.cpp}!btn@{btn}}
+\index{btn@{btn}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{btn}{btn}}
+{\footnotesize\ttfamily \label{main_8cpp_a7c896b42a4a6db2c6e29f2b13ae4f078_a7c896b42a4a6db2c6e29f2b13ae4f078} 
+volatile uint8\+\_\+t btn = 0}
+
+\Hypertarget{main_8cpp_a1e216fc830b4dd496536d9304384be01_a1e216fc830b4dd496536d9304384be01}\index{main.cpp@{main.cpp}!cur\_btn@{cur\_btn}}
+\index{cur\_btn@{cur\_btn}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{cur\_btn}{cur\_btn}}
+{\footnotesize\ttfamily \label{main_8cpp_a1e216fc830b4dd496536d9304384be01_a1e216fc830b4dd496536d9304384be01} 
+int cur\+\_\+btn = 0}
+
+\Hypertarget{main_8cpp_a4b7b16441f0d9af12f5db16f617a0601_a4b7b16441f0d9af12f5db16f617a0601}\index{main.cpp@{main.cpp}!dashScreen@{dashScreen}}
+\index{dashScreen@{dashScreen}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dashScreen}{dashScreen}}
+{\footnotesize\ttfamily \label{main_8cpp_a4b7b16441f0d9af12f5db16f617a0601_a4b7b16441f0d9af12f5db16f617a0601} 
+Screen\+Handler dash\+Screen}
+
+\Hypertarget{main_8cpp_a2110169bed39e6276cb2d5871d0499ae_a2110169bed39e6276cb2d5871d0499ae}\index{main.cpp@{main.cpp}!eop\_rawval@{eop\_rawval}}
+\index{eop\_rawval@{eop\_rawval}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{eop\_rawval}{eop\_rawval}}
+{\footnotesize\ttfamily \label{main_8cpp_a2110169bed39e6276cb2d5871d0499ae_a2110169bed39e6276cb2d5871d0499ae} 
+volatile uint32\+\_\+t eop\+\_\+rawval}
+
+\Hypertarget{main_8cpp_a6fa77f4e712ef1ba7ccb773574c149df_a6fa77f4e712ef1ba7ccb773574c149df}\index{main.cpp@{main.cpp}!gearz@{gearz}}
+\index{gearz@{gearz}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gearz}{gearz}}
+{\footnotesize\ttfamily \label{main_8cpp_a6fa77f4e712ef1ba7ccb773574c149df_a6fa77f4e712ef1ba7ccb773574c149df} 
+\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e}{GEARS}} gearz\+[7]\+ = \{\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaf46d14eb9d5d71afc9f6e747689fcb56}{NEUTRAL}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea7a725f13af144bdef532d0389ba75e0d}{ONE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea0e793500a63ffa575b9b712ca3bc9851}{TWO}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea1251fbf93888ad32fe0ae54d49bcef17}{THREE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea23d7ef5341c6930d19b2ecbb997977cf}{FOUR}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea3a40d11d30db182ab8f9846aa9458bec}{FIVE}}, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaadffddd32c3e7497e32cd7e430c9c106}{SIX}}\}}
+
+\Hypertarget{main_8cpp_ae21c10daa2f8cbd18a0e66bb28a19d2d_ae21c10daa2f8cbd18a0e66bb28a19d2d}\index{main.cpp@{main.cpp}!hcan@{hcan}}
+\index{hcan@{hcan}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hcan}{hcan}}
+{\footnotesize\ttfamily \label{main_8cpp_ae21c10daa2f8cbd18a0e66bb28a19d2d_ae21c10daa2f8cbd18a0e66bb28a19d2d} 
+CAN\+\_\+\+Handle\+Type\+Def hcan}
+
+\Hypertarget{main_8cpp_af7b2c26e44dadaaa798a5c3d82914ba7_af7b2c26e44dadaaa798a5c3d82914ba7}\index{main.cpp@{main.cpp}!hi2c1@{hi2c1}}
+\index{hi2c1@{hi2c1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
+{\footnotesize\ttfamily \label{main_8cpp_af7b2c26e44dadaaa798a5c3d82914ba7_af7b2c26e44dadaaa798a5c3d82914ba7} 
+I2\+C\+\_\+\+Handle\+Type\+Def hi2c1}
+
+\Hypertarget{main_8cpp_a9c6222bae4d0328dd843ae099623b40b_a9c6222bae4d0328dd843ae099623b40b}\index{main.cpp@{main.cpp}!hspi1@{hspi1}}
+\index{hspi1@{hspi1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hspi1}{hspi1}}
+{\footnotesize\ttfamily \label{main_8cpp_a9c6222bae4d0328dd843ae099623b40b_a9c6222bae4d0328dd843ae099623b40b} 
+SPI\+\_\+\+Handle\+Type\+Def hspi1}
+
+\Hypertarget{main_8cpp_ab9da65f935e805137e2eb4e18c5ab224_ab9da65f935e805137e2eb4e18c5ab224}\index{main.cpp@{main.cpp}!hspi2@{hspi2}}
+\index{hspi2@{hspi2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hspi2}{hspi2}}
+{\footnotesize\ttfamily \label{main_8cpp_ab9da65f935e805137e2eb4e18c5ab224_ab9da65f935e805137e2eb4e18c5ab224} 
+SPI\+\_\+\+Handle\+Type\+Def hspi2}
+
+\Hypertarget{main_8cpp_a25fc663547539bc49fecc0011bd76ab5_a25fc663547539bc49fecc0011bd76ab5}\index{main.cpp@{main.cpp}!htim1@{htim1}}
+\index{htim1@{htim1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{htim1}{htim1}}
+{\footnotesize\ttfamily \label{main_8cpp_a25fc663547539bc49fecc0011bd76ab5_a25fc663547539bc49fecc0011bd76ab5} 
+TIM\+\_\+\+Handle\+Type\+Def htim1}
+
+\Hypertarget{main_8cpp_aac3d2c59ee0e3bbae1b99529a154eb62_aac3d2c59ee0e3bbae1b99529a154eb62}\index{main.cpp@{main.cpp}!htim3@{htim3}}
+\index{htim3@{htim3}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{htim3}{htim3}}
+{\footnotesize\ttfamily \label{main_8cpp_aac3d2c59ee0e3bbae1b99529a154eb62_aac3d2c59ee0e3bbae1b99529a154eb62} 
+TIM\+\_\+\+Handle\+Type\+Def htim3}
+
+\Hypertarget{main_8cpp_a2cf715bef37f7e8ef385a30974a5f0d5_a2cf715bef37f7e8ef385a30974a5f0d5}\index{main.cpp@{main.cpp}!huart1@{huart1}}
+\index{huart1@{huart1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily \label{main_8cpp_a2cf715bef37f7e8ef385a30974a5f0d5_a2cf715bef37f7e8ef385a30974a5f0d5} 
+UART\+\_\+\+Handle\+Type\+Def huart1}
+
+\Hypertarget{main_8cpp_a6f567f9dce2e689c33a8f04695e65e0e_a6f567f9dce2e689c33a8f04695e65e0e}\index{main.cpp@{main.cpp}!next@{next}}
+\index{next@{next}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{main_8cpp_a6f567f9dce2e689c33a8f04695e65e0e_a6f567f9dce2e689c33a8f04695e65e0e} 
+volatile uint8\+\_\+t next = 0}
+
+\Hypertarget{main_8cpp_a42255c740f154f2b7182e90dd75fe7a8_a42255c740f154f2b7182e90dd75fe7a8}\index{main.cpp@{main.cpp}!NUM\_LEDS@{NUM\_LEDS}}
+\index{NUM\_LEDS@{NUM\_LEDS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_LEDS}{NUM\_LEDS}}
+{\footnotesize\ttfamily \label{main_8cpp_a42255c740f154f2b7182e90dd75fe7a8_a42255c740f154f2b7182e90dd75fe7a8} 
+volatile int NUM\+\_\+\+LEDS = 0}
+
+\Hypertarget{main_8cpp_a2560f489591e4c3e1cab61cbda94f4de_a2560f489591e4c3e1cab61cbda94f4de}\index{main.cpp@{main.cpp}!prev\_btn@{prev\_btn}}
+\index{prev\_btn@{prev\_btn}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{prev\_btn}{prev\_btn}}
+{\footnotesize\ttfamily \label{main_8cpp_a2560f489591e4c3e1cab61cbda94f4de_a2560f489591e4c3e1cab61cbda94f4de} 
+int prev\+\_\+btn = 1}
+
+\Hypertarget{main_8cpp_acde2de37a97eb02bac2abc58d59abdef_acde2de37a97eb02bac2abc58d59abdef}\index{main.cpp@{main.cpp}!rot\_state@{rot\_state}}
+\index{rot\_state@{rot\_state}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rot\_state}{rot\_state}}
+{\footnotesize\ttfamily \label{main_8cpp_acde2de37a97eb02bac2abc58d59abdef_acde2de37a97eb02bac2abc58d59abdef} 
+volatile uint8\+\_\+t rot\+\_\+state = 0}
+
+\Hypertarget{main_8cpp_ac07287fa36230a821ae310ab1772d927_ac07287fa36230a821ae310ab1772d927}\index{main.cpp@{main.cpp}!RX\_FLAG@{RX\_FLAG}}
+\index{RX\_FLAG@{RX\_FLAG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RX\_FLAG}{RX\_FLAG}}
+{\footnotesize\ttfamily \label{main_8cpp_ac07287fa36230a821ae310ab1772d927_ac07287fa36230a821ae310ab1772d927} 
+int RX\+\_\+\+FLAG = 0}
+
+\Hypertarget{main_8cpp_a14629afcc7f0b2d62c2b617b07d98184_a14629afcc7f0b2d62c2b617b07d98184}\index{main.cpp@{main.cpp}!RxData@{RxData}}
+\index{RxData@{RxData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RxData}{RxData}}
+{\footnotesize\ttfamily \label{main_8cpp_a14629afcc7f0b2d62c2b617b07d98184_a14629afcc7f0b2d62c2b617b07d98184} 
+uint8\+\_\+t Rx\+Data\+[8]\+}
+
+\Hypertarget{main_8cpp_a6ee6e13063b860648180eea65852cc71_a6ee6e13063b860648180eea65852cc71}\index{main.cpp@{main.cpp}!RxHeader@{RxHeader}}
+\index{RxHeader@{RxHeader}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RxHeader}{RxHeader}}
+{\footnotesize\ttfamily \label{main_8cpp_a6ee6e13063b860648180eea65852cc71_a6ee6e13063b860648180eea65852cc71} 
+CAN\+\_\+\+Rx\+Header\+Type\+Def Rx\+Header}
+
+\Hypertarget{main_8cpp_a5a353c7bd4a78f8f65b8ce4898305ae5_a5a353c7bd4a78f8f65b8ce4898305ae5}\index{main.cpp@{main.cpp}!setBright@{setBright}}
+\index{setBright@{setBright}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setBright}{setBright}}
+{\footnotesize\ttfamily \label{main_8cpp_a5a353c7bd4a78f8f65b8ce4898305ae5_a5a353c7bd4a78f8f65b8ce4898305ae5} 
+uint8\+\_\+t set\+Bright = 0}
+
+\Hypertarget{main_8cpp_a36d2b2a2416318bd9501b0c366fcb550_a36d2b2a2416318bd9501b0c366fcb550}\index{main.cpp@{main.cpp}!startnum@{startnum}}
+\index{startnum@{startnum}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{startnum}{startnum}}
+{\footnotesize\ttfamily \label{main_8cpp_a36d2b2a2416318bd9501b0c366fcb550_a36d2b2a2416318bd9501b0c366fcb550} 
+uint16\+\_\+t startnum\+[8]\+ = \{0b1110111, 0b0100010, 0b1101101, 0b1011101, 0b0011110, 0b1011011, 0b1111011, 0b0011111\}}
+
+\Hypertarget{main_8cpp_a0b57aa10271a66f3dc936bba1d2f3830_a0b57aa10271a66f3dc936bba1d2f3830}\index{main.cpp@{main.cpp}!state@{state}}
+\index{state@{state}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{main_8cpp_a0b57aa10271a66f3dc936bba1d2f3830_a0b57aa10271a66f3dc936bba1d2f3830} 
+uint8\+\_\+t state = 0x00}
+
+\Hypertarget{main_8cpp_a20b28c9a63d0542dc9c80d08a59bed16_a20b28c9a63d0542dc9c80d08a59bed16}\index{main.cpp@{main.cpp}!TxReader@{TxReader}}
+\index{TxReader@{TxReader}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TxReader}{TxReader}}
+{\footnotesize\ttfamily \label{main_8cpp_a20b28c9a63d0542dc9c80d08a59bed16_a20b28c9a63d0542dc9c80d08a59bed16} 
+CAN\+\_\+\+Tx\+Header\+Type\+Def Tx\+Reader}
+

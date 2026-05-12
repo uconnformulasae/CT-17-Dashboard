@@ -1,0 +1,194 @@
+\doxysection{Src/\+main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{Src/main.c@{Src/main.c}}
+
+
+:\+ Main program body  
+
+
+{\ttfamily \+\#include "{}main.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a4e1c6ea41691574754a85843373594b1}\label{main_8c_a4e1c6ea41691574754a85843373594b1} 
+\+\#define {\bfseries RPM\+\_\+\+REG}~GPIOA
+\item 
+\Hypertarget{main_8c_af9b157017736a977b461a5c6d12f60b9}\label{main_8c_af9b157017736a977b461a5c6d12f60b9} 
+\+\#define {\bfseries RPM\+\_\+\+LE}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\Hypertarget{main_8c_af944007d309383b270caddab4bff7e27}\label{main_8c_af944007d309383b270caddab4bff7e27} 
+\+\#define {\bfseries RPM\+\_\+\+SCK}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\Hypertarget{main_8c_a15d8ab1447d66ece0ae489184e827acc}\label{main_8c_a15d8ab1447d66ece0ae489184e827acc} 
+\+\#define {\bfseries RPM\+\_\+\+OE}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\Hypertarget{main_8c_a916c638cffcab1620ff78bb43be47ff4}\label{main_8c_a916c638cffcab1620ff78bb43be47ff4} 
+\+\#define {\bfseries RPM\+\_\+\+MOSI}~GPIO\+\_\+\+PIN\+\_\+7
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a6e83521e189864cb6a771cbdbfe6ba8c}{startup\+Seq}} ()
+\begin{DoxyCompactList}\small\item\em Plays the startup sequence for when car turns on. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a7d66b579f821d2020efe09909576f6d1}{LED\+\_\+on}} ()
+\begin{DoxyCompactList}\small\item\em Enables shift register LEDs. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a2409acb6029fd30d5aa1f71e8f9fcda4}\label{main_8c_a2409acb6029fd30d5aa1f71e8f9fcda4} 
+void {\bfseries LED\+\_\+off} ()
+\begin{DoxyCompactList}\small\item\em turns all shift reg LEDs off \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_aefe4cf995520af8dfd3007988104e03f}{rpm\+LEDs}} (uint32\+\_\+t ledseq)
+\begin{DoxyCompactList}\small\item\em Sets RPM LEDs to uint32\+\_\+t pattern. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a15a9852711745d886f73dfea1725f6e9}{gear\+LEDs}} (uint16\+\_\+t ledseq)
+\begin{DoxyCompactList}\small\item\em Sets gear LEDs to uint16\+\_\+t pattern. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_ae21c10daa2f8cbd18a0e66bb28a19d2d}\label{main_8c_ae21c10daa2f8cbd18a0e66bb28a19d2d} 
+CAN\+\_\+\+Handle\+Type\+Def {\bfseries hcan}
+\item 
+\Hypertarget{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}\label{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim3}
+\item 
+\Hypertarget{main_8c_a36d2b2a2416318bd9501b0c366fcb550}\label{main_8c_a36d2b2a2416318bd9501b0c366fcb550} 
+uint16\+\_\+t {\bfseries startnum} \+[8]\+ = \{0b1110111, 0b0100010, 0b1101101, 0b1011101, 0b0011110, 0b1011011, 0b1111011, 0b0011111\}
+\item 
+\Hypertarget{main_8c_aff0a99bc03c5658399873d458aefb95b}\label{main_8c_aff0a99bc03c5658399873d458aefb95b} 
+uint16\+\_\+t {\bfseries gears} \+[7]\+ = \{0b0111000, 0b0100010, 0b1101101, 0b1011101, 0b0011110, 0b1011011,0b1111011\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+:\+ Main program body 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2026 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-func-members}
+\Hypertarget{main_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily \label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a15a9852711745d886f73dfea1725f6e9}\index{main.c@{main.c}!gearLEDs@{gearLEDs}}
+\index{gearLEDs@{gearLEDs}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{gearLEDs()}{gearLEDs()}}
+{\footnotesize\ttfamily \label{main_8c_a15a9852711745d886f73dfea1725f6e9} 
+void gear\+LEDs (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ledseq}{}\end{DoxyParamCaption})}
+
+
+
+Sets gear LEDs to uint16\+\_\+t pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint16\+\_\+t} & ledseq \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a7d66b579f821d2020efe09909576f6d1}\index{main.c@{main.c}!LED\_on@{LED\_on}}
+\index{LED\_on@{LED\_on}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LED\_on()}{LED\_on()}}
+{\footnotesize\ttfamily \label{main_8c_a7d66b579f821d2020efe09909576f6d1} 
+void LED\+\_\+on (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enables shift register LEDs. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_aefe4cf995520af8dfd3007988104e03f}\index{main.c@{main.c}!rpmLEDs@{rpmLEDs}}
+\index{rpmLEDs@{rpmLEDs}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rpmLEDs()}{rpmLEDs()}}
+{\footnotesize\ttfamily \label{main_8c_aefe4cf995520af8dfd3007988104e03f} 
+void rpm\+LEDs (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ledseq}{}\end{DoxyParamCaption})}
+
+
+
+Sets RPM LEDs to uint32\+\_\+t pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint32\+\_\+t} & ledseq \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a6e83521e189864cb6a771cbdbfe6ba8c}\index{main.c@{main.c}!startupSeq@{startupSeq}}
+\index{startupSeq@{startupSeq}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{startupSeq()}{startupSeq()}}
+{\footnotesize\ttfamily \label{main_8c_a6e83521e189864cb6a771cbdbfe6ba8c} 
+void startup\+Seq (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays the startup sequence for when car turns on. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily \label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks

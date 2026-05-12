@@ -1,0 +1,139 @@
+\doxysection{Src/\+screen.c File Reference}
+\hypertarget{screen_8c}{}\label{screen_8c}\index{Src/screen.c@{Src/screen.c}}
+{\ttfamily \+\#include "{}screen.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{screen_8c_a1d8b48903fa3c7fd537103ea3979b53f}{set\+\_\+hi2c}} (I2\+C\+\_\+\+Handle\+Type\+Def hi2c)
+\item 
+void \doxymbox{\hyperlink{screen_8c_ade3bdf955bc57d214e2c77f01e669587}{write\+\_\+byte}} (uint8\+\_\+t byte)
+\item 
+void \doxymbox{\hyperlink{screen_8c_a896667b47eb162b0ac47022e6a57ca2a}{write\+\_\+bytes}} (char \texorpdfstring{$\ast$}{*}input)
+\item 
+void \doxymbox{\hyperlink{screen_8c_a600958ce6cb40f29251925bbcf14b5f9}{write\+\_\+bytes\+\_\+const}} (const char \texorpdfstring{$\ast$}{*}input)
+\item 
+void \doxymbox{\hyperlink{screen_8c_ac1486c1dea925018d24334240a13261e}{clear\+\_\+display}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_a42702791e6da9510e4f44f33d2dad8f1}{hide\+\_\+cursor}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_a5a606e2a0ebc9c7aa82786cd9c7ce8c9}{move\+\_\+cursor}} (uint8\+\_\+t column, uint8\+\_\+t row)
+\item 
+void \doxymbox{\hyperlink{screen_8c_a75ad537680b9f542c1ae214c8a5c4c09}{set\+\_\+\+FSAE\+\_\+bitmap}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_aa154e03193e8e35c6bc19575a2db9e5c}{set\+\_\+fun\+Bitmap}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_ae293444e9f0f675fdc306969c396c7fe}{write\+\_\+bitmap}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_add86798c066b436378e18aeae84ba779}{display\+\_\+\+FSAE\+\_\+bootscreen}} ()
+\item 
+void \doxymbox{\hyperlink{screen_8c_ac0a43b99fdf8950fb14112fd963881c3}{reboot}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \doxymbox{\hyperlink{screen_8c_a38b004d2caf032bda2a989cc4bbdf925}{screen\+\_\+hi2c1}}
+\item 
+const uint8\+\_\+t \doxymbox{\hyperlink{screen_8c_a19a44cd4317fdc54b573e7a88b5aa3a1}{fun\+\_\+bitmap}} \+[2]\+\+[8]\+
+\item 
+const uint8\+\_\+t \doxymbox{\hyperlink{screen_8c_abb6a3cfe1cb793a7ba7f43c5ff4daee7}{uconn\+\_\+fsae\+\_\+bitmap}} \+[8]\+\+[8]\+
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{screen_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{screen_8c_ac1486c1dea925018d24334240a13261e}\index{screen.c@{screen.c}!clear\_display@{clear\_display}}
+\index{clear\_display@{clear\_display}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{clear\_display()}{clear\_display()}}
+{\footnotesize\ttfamily \label{screen_8c_ac1486c1dea925018d24334240a13261e} 
+void clear\+\_\+display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_add86798c066b436378e18aeae84ba779}\index{screen.c@{screen.c}!display\_FSAE\_bootscreen@{display\_FSAE\_bootscreen}}
+\index{display\_FSAE\_bootscreen@{display\_FSAE\_bootscreen}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{display\_FSAE\_bootscreen()}{display\_FSAE\_bootscreen()}}
+{\footnotesize\ttfamily \label{screen_8c_add86798c066b436378e18aeae84ba779} 
+void display\+\_\+\+FSAE\+\_\+bootscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a42702791e6da9510e4f44f33d2dad8f1}\index{screen.c@{screen.c}!hide\_cursor@{hide\_cursor}}
+\index{hide\_cursor@{hide\_cursor}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{hide\_cursor()}{hide\_cursor()}}
+{\footnotesize\ttfamily \label{screen_8c_a42702791e6da9510e4f44f33d2dad8f1} 
+void hide\+\_\+cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a5a606e2a0ebc9c7aa82786cd9c7ce8c9}\index{screen.c@{screen.c}!move\_cursor@{move\_cursor}}
+\index{move\_cursor@{move\_cursor}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{move\_cursor()}{move\_cursor()}}
+{\footnotesize\ttfamily \label{screen_8c_a5a606e2a0ebc9c7aa82786cd9c7ce8c9} 
+void move\+\_\+cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{column}{, }\item[{uint8\+\_\+t}]{row}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_ac0a43b99fdf8950fb14112fd963881c3}\index{screen.c@{screen.c}!reboot@{reboot}}
+\index{reboot@{reboot}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{reboot()}{reboot()}}
+{\footnotesize\ttfamily \label{screen_8c_ac0a43b99fdf8950fb14112fd963881c3} 
+void reboot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a75ad537680b9f542c1ae214c8a5c4c09}\index{screen.c@{screen.c}!set\_FSAE\_bitmap@{set\_FSAE\_bitmap}}
+\index{set\_FSAE\_bitmap@{set\_FSAE\_bitmap}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{set\_FSAE\_bitmap()}{set\_FSAE\_bitmap()}}
+{\footnotesize\ttfamily \label{screen_8c_a75ad537680b9f542c1ae214c8a5c4c09} 
+void set\+\_\+\+FSAE\+\_\+bitmap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_aa154e03193e8e35c6bc19575a2db9e5c}\index{screen.c@{screen.c}!set\_funBitmap@{set\_funBitmap}}
+\index{set\_funBitmap@{set\_funBitmap}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{set\_funBitmap()}{set\_funBitmap()}}
+{\footnotesize\ttfamily \label{screen_8c_aa154e03193e8e35c6bc19575a2db9e5c} 
+void set\+\_\+fun\+Bitmap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a1d8b48903fa3c7fd537103ea3979b53f}\index{screen.c@{screen.c}!set\_hi2c@{set\_hi2c}}
+\index{set\_hi2c@{set\_hi2c}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{set\_hi2c()}{set\_hi2c()}}
+{\footnotesize\ttfamily \label{screen_8c_a1d8b48903fa3c7fd537103ea3979b53f} 
+void set\+\_\+hi2c (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def}]{hi2c}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_ae293444e9f0f675fdc306969c396c7fe}\index{screen.c@{screen.c}!write\_bitmap@{write\_bitmap}}
+\index{write\_bitmap@{write\_bitmap}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{write\_bitmap()}{write\_bitmap()}}
+{\footnotesize\ttfamily \label{screen_8c_ae293444e9f0f675fdc306969c396c7fe} 
+void write\+\_\+bitmap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_ade3bdf955bc57d214e2c77f01e669587}\index{screen.c@{screen.c}!write\_byte@{write\_byte}}
+\index{write\_byte@{write\_byte}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{write\_byte()}{write\_byte()}}
+{\footnotesize\ttfamily \label{screen_8c_ade3bdf955bc57d214e2c77f01e669587} 
+void write\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a896667b47eb162b0ac47022e6a57ca2a}\index{screen.c@{screen.c}!write\_bytes@{write\_bytes}}
+\index{write\_bytes@{write\_bytes}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{write\_bytes()}{write\_bytes()}}
+{\footnotesize\ttfamily \label{screen_8c_a896667b47eb162b0ac47022e6a57ca2a} 
+void write\+\_\+bytes (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{}\end{DoxyParamCaption})}
+
+\Hypertarget{screen_8c_a600958ce6cb40f29251925bbcf14b5f9}\index{screen.c@{screen.c}!write\_bytes\_const@{write\_bytes\_const}}
+\index{write\_bytes\_const@{write\_bytes\_const}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{write\_bytes\_const()}{write\_bytes\_const()}}
+{\footnotesize\ttfamily \label{screen_8c_a600958ce6cb40f29251925bbcf14b5f9} 
+void write\+\_\+bytes\+\_\+const (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{screen_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{screen_8c_a19a44cd4317fdc54b573e7a88b5aa3a1}\index{screen.c@{screen.c}!fun\_bitmap@{fun\_bitmap}}
+\index{fun\_bitmap@{fun\_bitmap}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{fun\_bitmap}{fun\_bitmap}}
+{\footnotesize\ttfamily \label{screen_8c_a19a44cd4317fdc54b573e7a88b5aa3a1} 
+const uint8\+\_\+t fun\+\_\+bitmap\+[2]\+\+[8]\+}
+
+\Hypertarget{screen_8c_a38b004d2caf032bda2a989cc4bbdf925}\index{screen.c@{screen.c}!screen\_hi2c1@{screen\_hi2c1}}
+\index{screen\_hi2c1@{screen\_hi2c1}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{screen\_hi2c1}{screen\_hi2c1}}
+{\footnotesize\ttfamily \label{screen_8c_a38b004d2caf032bda2a989cc4bbdf925} 
+I2\+C\+\_\+\+Handle\+Type\+Def screen\+\_\+hi2c1}
+
+\Hypertarget{screen_8c_abb6a3cfe1cb793a7ba7f43c5ff4daee7}\index{screen.c@{screen.c}!uconn\_fsae\_bitmap@{uconn\_fsae\_bitmap}}
+\index{uconn\_fsae\_bitmap@{uconn\_fsae\_bitmap}!screen.c@{screen.c}}
+\doxysubsubsection{\texorpdfstring{uconn\_fsae\_bitmap}{uconn\_fsae\_bitmap}}
+{\footnotesize\ttfamily \label{screen_8c_abb6a3cfe1cb793a7ba7f43c5ff4daee7} 
+const uint8\+\_\+t uconn\+\_\+fsae\+\_\+bitmap\+[8]\+\+[8]\+}
+

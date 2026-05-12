@@ -1,0 +1,140 @@
+\doxysection{Screen\+Handler Class Reference}
+\hypertarget{class_screen_handler}{}\label{class_screen_handler}\index{ScreenHandler@{ScreenHandler}}
+
+
+A class to handle the screen.  
+
+
+
+
+{\ttfamily \+\#include $<$screen\+Handle.\+hpp$>$}
+
+
+
+Collaboration diagram for Screen\+Handler:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_screen_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_screen_handler_ae13c500485cd1bbe8d8c8b1a930b1493_ae13c500485cd1bbe8d8c8b1a930b1493}{Screen\+Handler}} ()
+\item 
+\doxymbox{\hyperlink{class_screen_handler_a7dc6e74edbf277a7ecf3bbe7eb0e8c41_a7dc6e74edbf277a7ecf3bbe7eb0e8c41}{\texorpdfstring{$\sim$}{\string~}\+Screen\+Handler}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_a0b84de4674ffa18436be814f9bd60ecd_a0b84de4674ffa18436be814f9bd60ecd}{start\+Screen}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_ab3780a68ef862a845c087dccb7677fae_ab3780a68ef862a845c087dccb7677fae}{handle}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_a3b108133f05accf58ca9a1169a6ac23f_a3b108133f05accf58ca9a1169a6ac23f}{update}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_a809be00c8366839f8fde4235cdfd2083_a809be00c8366839f8fde4235cdfd2083}{next\+Screen}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_ac6140da54a598fa7908e38a572e0d4fb_ac6140da54a598fa7908e38a572e0d4fb}{prev\+Screen}} ()
+\item 
+void \doxymbox{\hyperlink{class_screen_handler_afc5bbcd933b1f5487b2d425a739c86fd_afc5bbcd933b1f5487b2d425a739c86fd}{add\+Screen}} (\doxymbox{\hyperlink{class_screen_panel}{Screen\+Panel}} \texorpdfstring{$\ast$}{*}screen)
+\item 
+int \doxymbox{\hyperlink{class_screen_handler_aa90b537aed84d9bc895034bdb94e0769_aa90b537aed84d9bc895034bdb94e0769}{get\+Index}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640}{\+\_\+cur\+Screen}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{class_screen_panel}{Screen\+Panel}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_screen_handler_aa5bf0e82e53f09a7c33f125ca7ad4fae_aa5bf0e82e53f09a7c33f125ca7ad4fae}{\+\_\+screens}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle the screen. 
+
+Class that holds \doxylink{class_screen_panel}{Screen\+Panel} classes and handles switching between screens and telling the \doxylink{class_screen_panel}{Screen\+Panel} to update it\textquotesingle{}s values. 
+
+\label{doc-constructors}
+\Hypertarget{class_screen_handler_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_screen_handler_ae13c500485cd1bbe8d8c8b1a930b1493_ae13c500485cd1bbe8d8c8b1a930b1493}\index{ScreenHandler@{ScreenHandler}!ScreenHandler@{ScreenHandler}}
+\index{ScreenHandler@{ScreenHandler}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{ScreenHandler()}{ScreenHandler()}}
+{\footnotesize\ttfamily \label{class_screen_handler_ae13c500485cd1bbe8d8c8b1a930b1493_ae13c500485cd1bbe8d8c8b1a930b1493} 
+Screen\+Handler::\+\+Screen\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_screen_handler_a7dc6e74edbf277a7ecf3bbe7eb0e8c41_a7dc6e74edbf277a7ecf3bbe7eb0e8c41}\index{ScreenHandler@{ScreenHandler}!````~ScreenHandler@{\texorpdfstring{$\sim$}{\string~}ScreenHandler}}
+\index{````~ScreenHandler@{\texorpdfstring{$\sim$}{\string~}ScreenHandler}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ScreenHandler()}{\string~ScreenHandler()}}
+{\footnotesize\ttfamily \label{class_screen_handler_a7dc6e74edbf277a7ecf3bbe7eb0e8c41_a7dc6e74edbf277a7ecf3bbe7eb0e8c41} 
+Screen\+Handler::\+\texorpdfstring{$\sim$}{\string~}\+Screen\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_screen_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_screen_handler_afc5bbcd933b1f5487b2d425a739c86fd_afc5bbcd933b1f5487b2d425a739c86fd}\index{ScreenHandler@{ScreenHandler}!addScreen@{addScreen}}
+\index{addScreen@{addScreen}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{addScreen()}{addScreen()}}
+{\footnotesize\ttfamily \label{class_screen_handler_afc5bbcd933b1f5487b2d425a739c86fd_afc5bbcd933b1f5487b2d425a739c86fd} 
+void Screen\+Handler::\+add\+Screen (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_screen_panel}{Screen\+Panel}} \texorpdfstring{$\ast$}{*}}]{screen}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_screen_handler_aa90b537aed84d9bc895034bdb94e0769_aa90b537aed84d9bc895034bdb94e0769}\index{ScreenHandler@{ScreenHandler}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily \label{class_screen_handler_aa90b537aed84d9bc895034bdb94e0769_aa90b537aed84d9bc895034bdb94e0769} 
+int Screen\+Handler::\+get\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_screen_handler_ab3780a68ef862a845c087dccb7677fae_ab3780a68ef862a845c087dccb7677fae}\index{ScreenHandler@{ScreenHandler}!handle@{handle}}
+\index{handle@{handle}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_screen_handler_ab3780a68ef862a845c087dccb7677fae_ab3780a68ef862a845c087dccb7677fae} 
+void Screen\+Handler::\+handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_screen_handler_a809be00c8366839f8fde4235cdfd2083_a809be00c8366839f8fde4235cdfd2083}\index{ScreenHandler@{ScreenHandler}!nextScreen@{nextScreen}}
+\index{nextScreen@{nextScreen}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{nextScreen()}{nextScreen()}}
+{\footnotesize\ttfamily \label{class_screen_handler_a809be00c8366839f8fde4235cdfd2083_a809be00c8366839f8fde4235cdfd2083} 
+void Screen\+Handler::\+next\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_screen_handler_ac6140da54a598fa7908e38a572e0d4fb_ac6140da54a598fa7908e38a572e0d4fb}\index{ScreenHandler@{ScreenHandler}!prevScreen@{prevScreen}}
+\index{prevScreen@{prevScreen}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{prevScreen()}{prevScreen()}}
+{\footnotesize\ttfamily \label{class_screen_handler_ac6140da54a598fa7908e38a572e0d4fb_ac6140da54a598fa7908e38a572e0d4fb} 
+void Screen\+Handler::\+prev\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_screen_handler_a0b84de4674ffa18436be814f9bd60ecd_a0b84de4674ffa18436be814f9bd60ecd}\index{ScreenHandler@{ScreenHandler}!startScreen@{startScreen}}
+\index{startScreen@{startScreen}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{startScreen()}{startScreen()}}
+{\footnotesize\ttfamily \label{class_screen_handler_a0b84de4674ffa18436be814f9bd60ecd_a0b84de4674ffa18436be814f9bd60ecd} 
+void Screen\+Handler::\+start\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_screen_handler_a3b108133f05accf58ca9a1169a6ac23f_a3b108133f05accf58ca9a1169a6ac23f}\index{ScreenHandler@{ScreenHandler}!update@{update}}
+\index{update@{update}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_screen_handler_a3b108133f05accf58ca9a1169a6ac23f_a3b108133f05accf58ca9a1169a6ac23f} 
+void Screen\+Handler::\+update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_screen_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640}\index{ScreenHandler@{ScreenHandler}!\_curScreen@{\_curScreen}}
+\index{\_curScreen@{\_curScreen}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{\_curScreen}{\_curScreen}}
+{\footnotesize\ttfamily \label{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640} 
+int Screen\+Handler::\+\+\_\+cur\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_screen_handler_aa5bf0e82e53f09a7c33f125ca7ad4fae_aa5bf0e82e53f09a7c33f125ca7ad4fae}\index{ScreenHandler@{ScreenHandler}!\_screens@{\_screens}}
+\index{\_screens@{\_screens}!ScreenHandler@{ScreenHandler}}
+\doxysubsubsection{\texorpdfstring{\_screens}{\_screens}}
+{\footnotesize\ttfamily \label{class_screen_handler_aa5bf0e82e53f09a7c33f125ca7ad4fae_aa5bf0e82e53f09a7c33f125ca7ad4fae} 
+std::\+vector$<$\doxymbox{\hyperlink{class_screen_panel}{Screen\+Panel}}\texorpdfstring{$\ast$}{*}$>$ Screen\+Handler::\+\+\_\+screens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Inc/\+\doxymbox{\hyperlink{screen_handle_8hpp}{screen\+Handle.\+hpp}}\item 
+Src/\+\doxymbox{\hyperlink{screen_handle_8cpp}{screen\+Handle.\+cpp}}\end{DoxyCompactItemize}

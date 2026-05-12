@@ -1,0 +1,155 @@
+\doxysection{Inc/\+main.h File Reference}
+\hypertarget{main_8h}{}\label{main_8h}\index{Inc/main.h@{Inc/main.h}}
+
+
+:\+ Header for main.\+c file. This file contains the common defines of the application.  
+
+
+{\ttfamily \+\#include "{}stm32f1xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \+\#include $<$Rx\+Class.\+h$>$}\newline
+Include dependency graph for main.\+h:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{main_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e}{GEARS}} \{ \newline
+\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaf46d14eb9d5d71afc9f6e747689fcb56}{NEUTRAL}} = 0b01110000
+, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea7a725f13af144bdef532d0389ba75e0d}{ONE}} = 0b00100100
+, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea0e793500a63ffa575b9b712ca3bc9851}{TWO}} = 0b11010110
+, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea1251fbf93888ad32fe0ae54d49bcef17}{THREE}} = 0b10110110
+, \newline
+\doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea23d7ef5341c6930d19b2ecbb997977cf}{FOUR}} = 0b00111100
+, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea3a40d11d30db182ab8f9846aa9458bec}{FIVE}} = 0b10111010
+, \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaadffddd32c3e7497e32cd7e430c9c106}{SIX}} = 0b11111010
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{main_8h_ae70bce6c39d0b570a7523b86738cec4b_ae70bce6c39d0b570a7523b86738cec4b}{HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \doxymbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{main_8h_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46}{reverse\+Bits}} (uint8\+\_\+t in\+\_\+bits)
+\item 
+void \doxymbox{\hyperlink{main_8h_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a}{set\+Brightness}} (float amount)
+\begin{DoxyCompactList}\small\item\em Set brightness amount withing range 1-\/10. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+:\+ Header for main.\+c file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2026 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-enum-members}
+\Hypertarget{main_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e}\index{main.h@{main.h}!GEARS@{GEARS}}
+\index{GEARS@{GEARS}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{GEARS}{GEARS}}
+{\footnotesize\ttfamily \label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e} 
+enum \doxymbox{\hyperlink{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4e}{GEARS}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEUTRAL@{NEUTRAL}!main.h@{main.h}}
+\index{main.h@{main.h}!NEUTRAL@{NEUTRAL}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaf46d14eb9d5d71afc9f6e747689fcb56}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaf46d14eb9d5d71afc9f6e747689fcb56} 
+NEUTRAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONE@{ONE}!main.h@{main.h}}
+\index{main.h@{main.h}!ONE@{ONE}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea7a725f13af144bdef532d0389ba75e0d}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea7a725f13af144bdef532d0389ba75e0d} 
+ONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TWO@{TWO}!main.h@{main.h}}
+\index{main.h@{main.h}!TWO@{TWO}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea0e793500a63ffa575b9b712ca3bc9851}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea0e793500a63ffa575b9b712ca3bc9851} 
+TWO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{THREE@{THREE}!main.h@{main.h}}
+\index{main.h@{main.h}!THREE@{THREE}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea1251fbf93888ad32fe0ae54d49bcef17}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea1251fbf93888ad32fe0ae54d49bcef17} 
+THREE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOUR@{FOUR}!main.h@{main.h}}
+\index{main.h@{main.h}!FOUR@{FOUR}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea23d7ef5341c6930d19b2ecbb997977cf}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea23d7ef5341c6930d19b2ecbb997977cf} 
+FOUR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIVE@{FIVE}!main.h@{main.h}}
+\index{main.h@{main.h}!FIVE@{FIVE}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea3a40d11d30db182ab8f9846aa9458bec}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4ea3a40d11d30db182ab8f9846aa9458bec} 
+FIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIX@{SIX}!main.h@{main.h}}
+\index{main.h@{main.h}!SIX@{SIX}}
+}\Hypertarget{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaadffddd32c3e7497e32cd7e430c9c106}\label{main_8h_a9ac567517b901a73b172d94d52a62b4e_a9ac567517b901a73b172d94d52a62b4eaadffddd32c3e7497e32cd7e430c9c106} 
+SIX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{main_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9}\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily \label{main_8h_a1730ffe1e560465665eb47d9264826f9_a1730ffe1e560465665eb47d9264826f9} 
+void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8h_ae70bce6c39d0b570a7523b86738cec4b_ae70bce6c39d0b570a7523b86738cec4b}\index{main.h@{main.h}!HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}}
+\index{HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_MspPostInit()}{HAL\_TIM\_MspPostInit()}}
+{\footnotesize\ttfamily \label{main_8h_ae70bce6c39d0b570a7523b86738cec4b_ae70bce6c39d0b570a7523b86738cec4b} 
+void HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim}{}\end{DoxyParamCaption})}
+
+TIM1 GPIO Configuration PA8 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM1\+\_\+\+CH1 PA11 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM1\+\_\+\+CH4\Hypertarget{main_8h_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46}\index{main.h@{main.h}!reverseBits@{reverseBits}}
+\index{reverseBits@{reverseBits}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{reverseBits()}{reverseBits()}}
+{\footnotesize\ttfamily \label{main_8h_a348e8880f224ee91f28e6102a3f00f46_a348e8880f224ee91f28e6102a3f00f46} 
+uint8\+\_\+t reverse\+Bits (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{in\+\_\+bits}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8h_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a}\index{main.h@{main.h}!setBrightness@{setBrightness}}
+\index{setBrightness@{setBrightness}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{setBrightness()}{setBrightness()}}
+{\footnotesize\ttfamily \label{main_8h_a2a056af06388af14ffafb762b5d71f8a_a2a056af06388af14ffafb762b5d71f8a} 
+void set\+Brightness (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Set brightness amount withing range 1-\/10. 
+

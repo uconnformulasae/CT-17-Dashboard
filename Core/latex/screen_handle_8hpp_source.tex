@@ -1,0 +1,67 @@
+\doxysection{screen\+Handle.\+hpp}
+\hypertarget{screen_handle_8hpp_source}{}\label{screen_handle_8hpp_source}\index{Inc/screenHandle.hpp@{Inc/screenHandle.hpp}}
+\doxymbox{\hyperlink{screen_handle_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_SCREENHANDLE\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_SCREENHANDLE\_HPP}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{_rx_class_8h}{RxClass.h}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_screen_handler}{ScreenHandler}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_screen_panel}{ScreenPanel}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_rx___type_def}{Rx\_TypeDef}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Rx\_LapStats;}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{screen_handle_8hpp_aab4c4d1dd2a0f54c35bad9057f284e44_aab4c4d1dd2a0f54c35bad9057f284e44}{formatTime}}(\textcolor{keywordtype}{int}\ ms);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_screen_handler_ae13c500485cd1bbe8d8c8b1a930b1493_ae13c500485cd1bbe8d8c8b1a930b1493}{ScreenHandler}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \doxymbox{\hyperlink{class_screen_handler_ae13c500485cd1bbe8d8c8b1a930b1493_ae13c500485cd1bbe8d8c8b1a930b1493}{ScreenHandler}}()\ \{\ \doxymbox{\hyperlink{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640}{\_curScreen}}\ =\ 0;\ \};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//ScreenHandler(std::vector<ScreenPanel\&>\ screens)\ :\ \_screens(screens)\ \{\}}}
+\DoxyCodeLine{00040\ \ \ \ \ \doxymbox{\hyperlink{class_screen_handler_a7dc6e74edbf277a7ecf3bbe7eb0e8c41_a7dc6e74edbf277a7ecf3bbe7eb0e8c41}{\string~ScreenHandler}}()\ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_a0b84de4674ffa18436be814f9bd60ecd_a0b84de4674ffa18436be814f9bd60ecd}{startScreen}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_ab3780a68ef862a845c087dccb7677fae_ab3780a68ef862a845c087dccb7677fae}{handle}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_a3b108133f05accf58ca9a1169a6ac23f_a3b108133f05accf58ca9a1169a6ac23f}{update}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_a809be00c8366839f8fde4235cdfd2083_a809be00c8366839f8fde4235cdfd2083}{nextScreen}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_ac6140da54a598fa7908e38a572e0d4fb_ac6140da54a598fa7908e38a572e0d4fb}{prevScreen}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_handler_afc5bbcd933b1f5487b2d425a739c86fd_afc5bbcd933b1f5487b2d425a739c86fd}{addScreen}}(\doxymbox{\hyperlink{class_screen_panel}{ScreenPanel}}*\ screen);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_screen_handler_aa90b537aed84d9bc895034bdb94e0769_aa90b537aed84d9bc895034bdb94e0769}{getIndex}}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640}{\_curScreen}};\ \}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_screen_handler_a69194bcf2497fc44427c36817178b640_a69194bcf2497fc44427c36817178b640}{\_curScreen}};\ \textcolor{comment}{//\ pointer\ to\ current\ screen}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ wait\ maybe\ i\ want\ curscreen\ to\ be\ an\ iterator}}
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<ScreenPanel*>\ \doxymbox{\hyperlink{class_screen_handler_aa5bf0e82e53f09a7c33f125ca7ad4fae_aa5bf0e82e53f09a7c33f125ca7ad4fae}{\_screens}};\ \textcolor{comment}{//\ array\ of\ all\ screens}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_screen_panel_a1c4096d5f464fee42bed3623b6f284d0_a1c4096d5f464fee42bed3623b6f284d0}{ScreenPanel}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \doxymbox{\hyperlink{class_screen_panel_a1c4096d5f464fee42bed3623b6f284d0_a1c4096d5f464fee42bed3623b6f284d0}{ScreenPanel}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{class_screen_panel_a9eac8c11616c16029cee3a245748b7ec_a9eac8c11616c16029cee3a245748b7ec}{name}},\ \doxymbox{\hyperlink{class_rx___type_def}{Rx\_TypeDef}}**\ Data)\ :\ \doxymbox{\hyperlink{class_screen_panel_a9eac8c11616c16029cee3a245748b7ec_a9eac8c11616c16029cee3a245748b7ec}{name}}(\doxymbox{\hyperlink{class_screen_panel_a9eac8c11616c16029cee3a245748b7ec_a9eac8c11616c16029cee3a245748b7ec}{name}}),\ \doxymbox{\hyperlink{class_screen_panel_a23b6f5897e42a3926cf0a4f7790021c2_a23b6f5897e42a3926cf0a4f7790021c2}{data}}(Data)\ \{\}}
+\DoxyCodeLine{00061\ \ \ \ \ \doxymbox{\hyperlink{class_screen_panel_a843296c130c75beb41ada9ba3eddd457_a843296c130c75beb41ada9ba3eddd457}{\string~ScreenPanel}}()\ \{\}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ what\ do\ I\ need\ here?}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_panel_a136d784682b162bd52cb7b6281f3b692_a136d784682b162bd52cb7b6281f3b692}{Display}}();\ \textcolor{comment}{//\ displays\ to\ LCD\ screen}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_panel_acc383647833e712fcd3d1dec829f5dc6_acc383647833e712fcd3d1dec829f5dc6}{titleScreen}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_screen_panel_a52eac356aa0049b8e92da99d4e218540_a52eac356aa0049b8e92da99d4e218540}{ButtonAction}}();\ \textcolor{comment}{//\ what\ does\ the\ button\ do\ when\ you\ click\ it}}
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \doxymbox{\hyperlink{class_rx___type_def}{Rx\_TypeDef}}**\ \doxymbox{\hyperlink{class_screen_panel_a23b6f5897e42a3926cf0a4f7790021c2_a23b6f5897e42a3926cf0a4f7790021c2}{data}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{class_screen_panel_a9eac8c11616c16029cee3a245748b7ec_a9eac8c11616c16029cee3a245748b7ec}{name}};}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

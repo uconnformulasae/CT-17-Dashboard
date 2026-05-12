@@ -1,0 +1,32 @@
+\doxysection{screen.\+h}
+\hypertarget{screen_8h_source}{}\label{screen_8h_source}\index{Inc/screen.h@{Inc/screen.h}}
+\doxymbox{\hyperlink{screen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_SCREEN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_SCREEN\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}stm32f1xx\_hal.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a1d8b48903fa3c7fd537103ea3979b53f_a1d8b48903fa3c7fd537103ea3979b53f}{set\_hi2c}}(I2C\_HandleTypeDef\ hi2c);}
+\DoxyCodeLine{00010\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a1938c19ea8e5843b18c2d0ba83503cb5_a1938c19ea8e5843b18c2d0ba83503cb5}{write\_byte}}(uint8\_t);\ \ \textcolor{comment}{//\ Writes\ one\ byte\ to\ the\ display}}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a896667b47eb162b0ac47022e6a57ca2a_a896667b47eb162b0ac47022e6a57ca2a}{write\_bytes}}(\textcolor{keywordtype}{char}*\ input);\ \ \textcolor{comment}{//\ Takes\ a\ string,\ writes\ all\ characters\ to\ the\ display,\ one\ at\ a\ time}}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a600958ce6cb40f29251925bbcf14b5f9_a600958ce6cb40f29251925bbcf14b5f9}{write\_bytes\_const}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ input);\ \ \textcolor{comment}{//\ Takes\ a\ string,\ writes\ all\ characters\ to\ the\ display,\ one\ at\ a\ time}}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_ac1486c1dea925018d24334240a13261e_ac1486c1dea925018d24334240a13261e}{clear\_display}}();\ \ \textcolor{comment}{//\ Clears\ the\ display}}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a42702791e6da9510e4f44f33d2dad8f1_a42702791e6da9510e4f44f33d2dad8f1}{hide\_cursor}}();\ \ \textcolor{comment}{//\ Hides\ the\ cursor}}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a5a606e2a0ebc9c7aa82786cd9c7ce8c9_a5a606e2a0ebc9c7aa82786cd9c7ce8c9}{move\_cursor}}(uint8\_t\ column,\ uint8\_t\ row);\ \textcolor{comment}{//\ Moves\ the\ cursor\ to\ given\ indices}}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_a75ad537680b9f542c1ae214c8a5c4c09_a75ad537680b9f542c1ae214c8a5c4c09}{set\_FSAE\_bitmap}}();\ \textcolor{comment}{//\ Sets\ the\ bitmap\ to\ the\ FSAE\ one}}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_aa154e03193e8e35c6bc19575a2db9e5c_aa154e03193e8e35c6bc19575a2db9e5c}{set\_funBitmap}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_add86798c066b436378e18aeae84ba779_add86798c066b436378e18aeae84ba779}{display\_FSAE\_bootscreen}}();}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_ae293444e9f0f675fdc306969c396c7fe_ae293444e9f0f675fdc306969c396c7fe}{write\_bitmap}}();\ \ \textcolor{comment}{//\ Writes\ current\ bitmap\ to\ the\ display}}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{screen_8h_ac0a43b99fdf8950fb14112fd963881c3_ac0a43b99fdf8950fb14112fd963881c3}{reboot}}();}
+\DoxyCodeLine{00022\ \textcolor{comment}{//void\ set\_hi2c(I2C\_HandleTypeDef\ hi2c);}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
